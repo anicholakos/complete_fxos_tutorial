@@ -22,6 +22,7 @@ here is my blog post titled `Firefox OS – The Mobile Platform That Needs To
 Succeed
 <http://rominirani.com/2013/07/23/firefox-os-the-mobile-web-platform-that-needs-to-succeed/>`__
 
+
 What is Firefox OS? A Quick Overview Please!
 --------------------------------------------
 
@@ -29,12 +30,14 @@ As with many things of this nature, it is a very good idea to start with
 the `Firefox OS Wikipedia page <http://en.wikipedia.org/wiki/Firefox_OS>`__ to
 get a broad overview of what Firefox is and how it came to be.
 
+
 Current list of devices support Firefox OS
 ------------------------------------------
 
 The mobile phone space is rapidly changing.  For a current list of the
 countries where Firefox OS phones can be purchased and which vendors sell them
 see `this page <https://www.mozilla.org/en-US/firefox/os/devices/>`__.
+
 
 What do I need to learn?
 ------------------------
@@ -58,6 +61,8 @@ HTML5/CSS/JavaScript. Code Academy has some great tutorials (`HTML/CSS
 <http://www.codecademy.com/tracks/javascript>`__), if you want to learn about
 them.
 
+.. index:: marketplace
+
 Is there a Firefox Marketplace?
 -------------------------------
 
@@ -80,3 +85,29 @@ Few things to note here:
 
 We shall cover the complete process of submitting your Firefox OS application
 to the Marketplace in a future episode. This will suffice for now.
+
+
+.. index:: dev tools
+
+Can we get going with the installation of Dev Tools, please?
+------------------------------------------------------------
+
+Sorry mate ! There is no need for any special IDE for Firefox OS App
+Development. Feel free to use whatever tools you have in your toolbox for Web
+Development. As long as you are able to generate a standards based HTML5 Web
+app, you will be all set. All you really need is your good old text editor to
+get going.
+
+In later episodes, we shall show how we could take an existing web application,
+do a little bit of manifest work and boom, the app is ready for Firefox OS. But
+more on that later.
+
+
+Firefox OS Simulator
+--------------------
+
+Firefox now comes with
+`WebIDE <https://developer.mozilla.org/en-US/docs/Tools/WebIDE>`__ built-in.
+Just press ``Shift+F8`` in an active Firefox window to lauch it.
+
+
