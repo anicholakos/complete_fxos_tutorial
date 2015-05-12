@@ -31,3 +31,6 @@ Complete Firefox OS Tutorial by Romin Irani is licensed under a
     :hidden:
 
     copyright.rst
+
+
+* :ref:`search`

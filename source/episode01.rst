@@ -31,6 +31,8 @@ the `Firefox OS Wikipedia page <http://en.wikipedia.org/wiki/Firefox_OS>`__ to
 get a broad overview of what Firefox is and how it came to be.
 
 
+.. index:: supported devices 
+
 Current list of devices support Firefox OS
 ------------------------------------------
 
@@ -38,6 +40,8 @@ The mobile phone space is rapidly changing.  For a current list of the
 countries where Firefox OS phones can be purchased and which vendors sell them
 see `this page <https://www.mozilla.org/en-US/firefox/os/devices/>`__.
 
+
+.. index:: needed skills 
 
 What do I need to learn?
 ------------------------
@@ -60,6 +64,7 @@ HTML5/CSS/JavaScript. Code Academy has some great tutorials (`HTML/CSS
 <http://www.codecademy.com/tracks/web>`__ and `JavaScript
 <http://www.codecademy.com/tracks/javascript>`__), if you want to learn about
 them.
+
 
 .. index:: marketplace
 
@@ -110,4 +115,24 @@ Firefox now comes with
 `WebIDE <https://developer.mozilla.org/en-US/docs/Tools/WebIDE>`__ built-in.
 Just press ``Shift+F8`` in an active Firefox window to lauch it.
 
+.. image:: illustrations/episode01/WebIDE01.png
+   :alt: WebIDE 
+   :height: 350px
 
+Clicking on ``Select Runtime`` gives a drop-down list.
+
+.. image:: illustrations/episode01/WebIDE02.png
+   :alt: WebIDE Select Runtime
+   :height: 350px
+
+Clicking ``Install Simulator`` loads available simulator versions.
+
+.. image:: illustrations/episode01/WebIDE03.png
+   :alt: WebIDE Simulator Versions
+   :height: 350px
+
+Firefox OS 2.0 is the most recent stable version, so let's install that.
+
+.. image:: illustrations/episode01/WebIDE04.png
+   :alt: WebIDE Install Firefox OS 2.0 simulator 
+   :height: 350px
