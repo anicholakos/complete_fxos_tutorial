@@ -136,3 +136,19 @@ Firefox OS 2.0 is the most recent stable version, so let's install that.
 .. image:: illustrations/episode01/WebIDE04.png
    :alt: WebIDE Install Firefox OS 2.0 simulator 
    :height: 350px
+
+Returning to ``Select Runtime`` now shows the simulator in the menu.
+
+.. image:: illustrations/episode01/WebIDE05.png
+   :alt: WebIDE Select Runtime with Firefox OS 2.0 simulator
+   :height: 350px
+
+Clicking on ``Firefox OS 2.0`` launches the simulator.
+
+.. image:: illustrations/episode01/WebIDE06.png
+   :alt: WebIDE and running simulator 
+   :height: 400px
+
+This marks the end of Episode 1. In the next episode, we shall look at writing
+our first application. We will stick to tradition and write Hello World on
+Firefox OS.
