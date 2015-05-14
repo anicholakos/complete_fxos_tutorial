@@ -106,6 +106,8 @@ the key files that make up your application are ``index.html``, ``zipcode.js``,
 and the ``manifest.webapp`` files that we shall discuss next.
 
 
+.. index:: index.html, UI, user interface
+
 The UI  – index.html
 --------------------
 
@@ -117,6 +119,40 @@ below:
 .. literalinclude:: _static/episode02/index.html
    :language: html
    :linenos:
+
+The UI is based on `jQuery Mobile <https://jquerymobile.com/>`__, which is a
+responsive web UI framework. I strongly suggest to use UI frameworks that are
+responsive in nature i.e. they adapt to different screen sizes and resolutions.
+Increasingly the web is being accessed by people with different screen sizes
+and resolutions and it is imperative that your web UI adjust itself gracefully
+for optimum web display.  You can also choose to go for frameworks like
+`Bootstrap <http://getbootstrap.com/>`__ or even `Firefox OS Building Blocks
+<https://developer.mozilla.org/en-US/Apps/Design/Firefox_OS_building_blocks>`__,
+but I leave that choice to you.
+
+One point to note here: One may argue about why a simple application like this
+needs heavy frameworks like jQuery and jQuery Mobile. Can’t we just get going
+with our plain simple HTML coded by hand. Yes you can. My intention here is not
+to demonstrate optimum coding techniques but to show you that you can use your
+existing frameworks while coding Firefox OS apps. The idea is to indicate to
+the reader that all the tools/frameworks that he/she is used to should be used
+as needed.
+
+So moving on to the UI part, focus on lines 14-30 for the user interface.
+
+* **Line 21** declares the input field that we shall use to allow for the user
+  to enter the pincode. Note that we make good use of HTML5 attributes like
+  placeholder and autofocus. The placeholder attribute is a good way to specify
+  what needs to be entered in the input (like a hint). It saves a lot of real
+  estate on a small mobile screen.
+* Do note that the ``inputtype`` is also specified as ``search``. This is a
+  very useful attribute on mobile screens. It will allow for a quick way to
+  clear up the input as you type text.
+* If you want to brush up on HTML Form Features and input types, check out my
+  blog posts: `HTML5 Recipes: Forms Enhancements
+  <http://rominirani.com/html5-recipes-forms-enhancements/>`__ and `HTML5
+  Recipes: New Input Types
+  <http://rominirani.com/html5-recipes-new-input-types/>`__.
 
 
 The code - zipcode.js
