@@ -2,10 +2,12 @@
    and/or modify this document under the terms of the Creative Commons
    Attribution-ShareAlike 4.0 International Public License.
 
+
 .. _hello_world:
 
 Hello World
 ===========
+
 
 Prerequisites
 -------------
@@ -163,9 +165,47 @@ So moving on to the UI part, focus on lines 14-30 for the user interface.
 The code - ``zipcode.js``
 -------------------------
 
+Let us dicuss functionality now. Since programming logic for Firefox OS apps
+is written in JavaScript, we'll put our code in the following ``zipcode.js``
+file:
+
 .. literalinclude:: _static/episode02/zipcode.js
    :language: javascript 
    :linenos:
+
+* We are using the standard jQuery ``.ready()`` callback to do our wiring once
+  the page is loaded.
+* The only functionality that we need is a ``click`` handler for the
+  ``btnSearch`` button.  The code is a straightforward Ajax call to the web
+  service hosted at ``http://api.zippopotam.us/us/<YourZIPCode>``.  This
+  service returns us a JSON formatted string for the ZIP code that we enter.
+  For e.g. if you make the following request http://api.zippopotam.us/us/90210,
+  it will return you the ZIP code details for pincode have a value 90210.  A
+  sample JSON response is shown below::
+
+      {"post code": "90210", "country": "United States", 
+      "country abbreviation": "US", "places": [{"place name": "Beverly Hills", 
+      "longitude": "-118.4065", "state": "California", 
+      "state abbreviation": "CA", "latitude": "34.0901"}]}
+
+* A key thing to note over here. You could utilize the jQuery Ajax methods but
+  I have intentionally shown you the raw XMLHTTPRequest object over here, so
+  that you are aware of what is going on at the ground level. However, pay
+  attention to **line 5**.  The XMLHttpRequest object is instantiated in the
+  normal way but with an additional setting of mozSystem:true as shown below.
+  This is required for the Firefox OS browser. I could not get it to work
+  without that.
+
+  .. sourcecode:: javascript
+
+      var xhr = new XMLHttpRequest({mozSystem: true});
+
+* The next few lines make the standard Ajax call to the service and when the
+  response is ready, it parses out the information, creates individual li
+  elements for the result data and populates the searchResults with the
+  response.
+
+That is all we have in the code.
 
 
 Manifest file - ``manifest.webapp`` 
@@ -281,3 +321,57 @@ Steps to install the application in your Firefox OS Simulator are given below:
     .. image:: illustrations/episode02/deploying_app2.png
        :alt: Valid app in WebIDE 
        :height: 350px
+
+#. Clicking the triangle icon deploys the app to the simulator. The first time
+   it runs you will be asked for permission to share your location.
+
+    .. image:: illustrations/episode02/deploying_app3.png
+       :alt: App deployed to simulator 
+       :height: 400px
+
+#. After clicking ``Share`` you can use the app. 
+
+    .. image:: illustrations/episode02/deploying_app4.png
+       :alt: App deployed to simulator 
+       :height: 400px
+
+#. The app is now installed on the simulator for use later. 
+
+    .. image:: illustrations/episode02/deploying_app5.png
+       :alt: App in phone menu 
+       :height: 400px
+
+
+Development Cycle
+-----------------
+
+In case you want to make changes to your application, all you need to do is
+modify the ``index.html``, ``zipcode.js``, ``manifest.webapp`` or additional
+files in your application. You do this in a normal way on your machine.
+
+Once the changes are ready, you can simply click on the refresh icon -- which
+replaced the triangle you used to deploy the app the first time. This will load
+the latest version of the application and relaunch it for you in the simulator.
+Nice, isn't it?
+
+
+Next Steps
+----------
+
+I encourage you to enhance the current application by providing error checks,
+validation, etc. If you want, you could possibly try out writing your own app.
+If you are looking for other public web apis to call, take a look at
+ProgrammableWeb, they list thousands of APIs. Maybe you could write a Weather
+App, Currency App ... the world is yours.
+
+
+Coming up Next
+--------------
+
+The next episode will go into a little more detail for the Firefox OS
+Simulator, some issues that you may see when you write incorrect
+``manifest.webapp`` and how to use the Dev Tools within Firefox to understand
+issues, logs, etc.
+
+Once we cover that, we shall get going with publishing the application to the
+Marketplace in later episode.

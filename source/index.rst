@@ -15,6 +15,8 @@ Episodes
 
 * `Episode 1: Overview and Development Setup <episode01.html>`__
 * `Episode 2: Hello World <episode02.html>`__
+* `Episode 3: Working with the WebIDE <episode03.html>`__
+* `Episode 4: Submitting your Application to the Marketplace <episode04.html>`__
 * `Copyright License <copyright.html>`__
 
 .. image:: _static/cc_license_logo.png
@@ -29,6 +31,8 @@ Complete Firefox OS Tutorial by Romin Irani is licensed under a
 
     episode01.rst
     episode02.rst
+    episode03.rst
+    episode04.rst
 
 .. toctree::
     :maxdepth: 1

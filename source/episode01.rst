@@ -2,6 +2,7 @@
    and/or modify this document under the terms of the Creative Commons
    Attribution-ShareAlike 4.0 International Public License.
 
+
 .. _dev_setup:
 
 Overview and Development Setup
@@ -78,7 +79,6 @@ process for them, you will find this no different.
 .. image:: illustrations/episode01/fxos_marketplace.png
    :alt: Firefox Marketplace
    :height: 350px
-   :align: center
 
 Few things to note here:
 
