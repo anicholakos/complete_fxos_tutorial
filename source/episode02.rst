@@ -153,11 +153,68 @@ So moving on to the UI part, focus on lines 14-30 for the user interface.
   <http://rominirani.com/html5-recipes-forms-enhancements/>`__ and `HTML5
   Recipes: New Input Types
   <http://rominirani.com/html5-recipes-new-input-types/>`__.
+* **Line 23** specifies a button labeled ``Search``, which when clicked needs
+  to retrieve for us the details of the ZIP code entered.
+* **Lines 25-27** define the results list where we shall display the results.
+  This is just my way of definining the UI. Feel free to be as creative as you
+  want.
 
 
-The code - zipcode.js
----------------------
+The code - ``zipcode.js``
+-------------------------
 
 .. literalinclude:: _static/episode02/zipcode.js
    :language: javascript 
    :linenos:
+
+
+Manifest file - ``manifest.webapp`` 
+-----------------------------------
+
+Now that the code is ready, we need to specify an additional file known as
+``manifest.webapp``. This file is needed to provide various meta data about
+your application. If you are coming from an Android world, think of this file
+as the ``android-manifest.xml`` file that you write.
+
+We shall go into the details on manifest in a later episode but for now, it is
+sufficient to know that this file will provide information like:
+
+* Name of your App
+* App Version
+* App Description
+* App Icons
+* Permissions that your app needs to run on device
+* Locales that your App supports
+* and much more
+
+Take a look at the ``manifest.webapp`` file shown below:
+
+.. literalinclude:: _static/episode02/manifest.webapp
+   :language: javascript 
+   :linenos:
+
+Let us discuss the entries:
+
+* The **version**, **name** and **description** should be straightforward to
+  understand. A good practice is to choose them carefully so that they reflect
+  accurately what your application does. Choose a versioning scheme that
+  reflects your internal schemes and/or development/build processes.
+* The **launch_path** specifies what file is to be invoked when your app is
+  launched. This is ideally the first page that you would like to show when the
+  user launches your app. The value should be a relative path in your
+  application directory. In our case, the file we want to launch on application
+  start is ``index.html`` and since the ``manifest.webapp`` file is in the same
+  folder as the ``index.html``, so we simply specify the value as
+  ``/index.html``.  But make it a relative path in case the first page is
+  nested inside some other directory than where the ``manifest.webapp`` is
+  present.
+* When your mobile application is installed on the Firefox OS Device, the OS
+  will select the icon to be shown on the device, which when tapped will launch
+  your application. To submit an app to the marketplace, it is required to have
+  two sizes of icons: 128 pixel and 512 pixel (see
+  `https://developer.mozilla.org/en-US/Apps/Build/Manifest
+  <https://developer.mozilla.org/en-US/Apps/Build/Manifest>`__).
+* The next values **developer**, **url** and **name** specify details on who
+  created the application. Be consistent with these values and do specify a url
+  that actually exists.
+* The **default_locale** is English (en) for now.
