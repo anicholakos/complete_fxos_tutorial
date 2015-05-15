@@ -113,7 +113,7 @@ Firefox OS Simulator
 
 Firefox now comes with
 `WebIDE <https://developer.mozilla.org/en-US/docs/Tools/WebIDE>`__ built-in.
-Just press ``Shift+F8`` in an active Firefox window to lauch it.
+Just press ``Shift+F8`` in an active Firefox window to launch it.
 
 .. image:: illustrations/episode01/WebIDE01.png
    :alt: WebIDE 
