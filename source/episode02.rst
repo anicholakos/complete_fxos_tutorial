@@ -218,3 +218,66 @@ Let us discuss the entries:
   created the application. Be consistent with these values and do specify a url
   that actually exists.
 * The **default_locale** is English (en) for now.
+* The next 2 values are critical to the functioning of this application. This
+  is because our application needs to invoke some special APIs i.e. in our case
+  it is the Ajax call that is made to the external web service. Hence we have
+  to specify one property name type and its value is set to privileged. Only
+  privileged apps have access to special Web APIs for e.g. some of the device
+  APIs, which we shall be seeing later. It is good to have this setup now
+  itself. And since we have mentioned that our application type is privileged,
+  we have to also mention which permissions you need. And that is specified by
+  the permissions parameter. Currently since we need just the XMLHttpRequest to
+  be made, we specify this as follows::
+
+      "permissions": {
+         "systemXHR": {
+             "description": "Required to make Ajax Calls over the Network"
+         }
+      }
+
+  There is a `full list of permissions
+  <https://developer.mozilla.org/en-US/Apps/Build/App_permissions>`__
+  for your reference. For a discussion on different types of Firefox Apps,
+  check this `developer note
+  <https://developer.mozilla.org/en-US/Marketplace/Options/Packaged_apps>`__.
+
+
+Local Installation and Testing
+------------------------------
+
+This completes our discussion of writing our first Firefox OS App. Now comes
+the part of seeing it actually work. All we need to test out this application
+is:
+
+#. You should have installed the **Firefox OS Simulator** in the **WebIDE** of
+   your Firefox Browser.
+#. A working internet connection from your machine.
+#. You should have downloaded/written the application as described above. We
+   will assume that the ``index.html`` and ``manifest.webapp`` file are present
+   in a directory named ``zipecodeapp``. You should navigate to your own
+   directory structure when called to later.
+
+Steps to install the application in your Firefox OS Simulator are given below:
+
+#. Launch your Firefox Browswer.  Next, launch the WebIDE by pressing
+   ``Shift+F8``, and end up where we were at the end of
+   :ref:`dev_setup`:
+
+    .. image:: illustrations/episode01/WebIDE06.png
+       :alt: WebIDE and running simulator 
+       :height: 400px
+
+#. Since we have written a packaged app, we need to specify the directory where
+   our ``manifest.webapp`` file is. That will be sufficient for the WebIDE to
+   pick up the rest of the details including the launch URL and so on. Click on
+   ``Open App -> Open Packaged App...`` as shown below: 
+
+    .. image:: illustrations/episode02/deploying_app1.png
+       :alt: Selecting packaged app in WebIDE 
+       :height: 350px
+
+#. The WebIDE will then read the manifest, validate it.
+
+    .. image:: illustrations/episode02/deploying_app2.png
+       :alt: Valid app in WebIDE 
+       :height: 350px

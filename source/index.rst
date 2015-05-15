@@ -6,7 +6,7 @@ Complete Firefox OS Tutorial
 
 by Romin Irani
 
-remixed and updated by Jeff Elkner, Aki Nicholakos, and Finn Cardiff
+remixed and updated by Jeff Elkner, Sotirios Nicholakos, and Finn Cardiff
 
 Last updated: 15 May 2015
 
