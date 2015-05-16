@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Complete Firefox OS Tutorial documentation build configuration file, created by
-# sphinx-quickstart on Sun May 10 14:27:07 2015.
+# Firefox OS App Development Tutorial documentation build configuration file,
+# created by sphinx-quickstart on Sun May 10 14:27:07 2015.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Complete Firefox OS Tutorial'
+project = 'Firefox OS App Development Tutorial'
 copyright = '2015, Romin Irani'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -183,7 +183,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'CompleteFirefoxOSTutorialdoc'
+htmlhelp_basename = 'FirefoxOSAppDevTutorialdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -203,7 +203,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'CompleteFirefoxOSTutorial.tex', 'Complete Firefox OS Tutorial Documentation',
+  ('index', 'FirefoxOSAppDevevelopmentTutorial.tex', 'Firefox OS App Development Tutorial Documentation',
    'Romin Irani', 'manual'),
 ]
 
@@ -233,7 +233,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'completefirefoxostutorial', 'Complete Firefox OS Tutorial Documentation',
+    ('index', 'firefoxosappdevtutorial', 'Firefox OS App Development Tutorial Documentation',
      ['Romin Irani'], 1)
 ]
 
@@ -247,8 +247,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'CompleteFirefoxOSTutorial', 'Complete Firefox OS Tutorial Documentation',
-   'Romin Irani', 'CompleteFirefoxOSTutorial', 'One line description of project.',
+  ('index', 'FirefoxOSAppDevTutorial', 'Firefox OS App Development Tutorial Documentation',
+   'Romin Irani', 'FirefoxOSAppDevelopmentTutorial', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -268,13 +268,13 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = 'Complete Firefox OS Tutorial'
+epub_title = 'Firefox OS App Development Tutorial'
 epub_author = 'Romin Irani'
 epub_publisher = 'Romin Irani'
 epub_copyright = '2015, Romin Irani'
 
 # The basename for the epub file. It defaults to the project name.
-#epub_basename = 'Complete Firefox OS Tutorial'
+#epub_basename = 'Firefox OS App Development Tutorial'
 
 # The HTML theme for the epub output. Since the default themes are not optimized
 # for small screen space, using the same theme for HTML and epub output is

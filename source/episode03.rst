@@ -8,7 +8,7 @@
 Episode 3: Working with the WebIDE
 ==================================
 
-Welcome to Episode 3 of the Firefox OS App Development tutorial. This episode
+Welcome to Episode 3 of the Firefox OS App Development Tutorial. This episode
 is about digging deeper into the Firefox OS WebIDE and learning how to debug
 Firefox OS Apps.
 

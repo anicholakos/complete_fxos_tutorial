@@ -8,7 +8,7 @@
 Location, Location, Location
 ============================
 
-Welcome to Episode 5 of the Firefox OS App Development tutorial. This episode
+Welcome to Episode 5 of the Firefox OS App Development Tutorial. This episode
 will take you through the steps for writing Firefox OS Apps that are location
 aware. What this means is that your application can interact with the GPS
 receiver that is present on the Firefox OS Device, retrieve the current
