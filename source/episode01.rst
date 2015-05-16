@@ -5,10 +5,11 @@
 
 .. _dev_setup:
 
-Overview and Development Setup
-==============================
+Episode 1: Overview and Development Setup
+=========================================
 
-Welcome series of tutorials on getting started with Firefox OS development.
+Welcome to a series of tutorials on getting started with Firefox OS app
+development.
 
 I will assume that the reason you are here is to learn how to write Firefox OS
 apps. Well, if you are web developer, I can safely state that you already know
@@ -21,7 +22,7 @@ will not get into those details but briefly touch upon them so that we are on
 the same page. If you want to know more about why I want Firefox OS to succeed, 
 here is my blog post titled `Firefox OS – The Mobile Platform That Needs To
 Succeed
-<http://rominirani.com/2013/07/23/firefox-os-the-mobile-web-platform-that-needs-to-succeed/>`__
+<http://rominirani.com/2013/07/23/firefox-os-the-mobile-web-platform-that-needs-to-succeed/>`__.
 
 
 What is Firefox OS? A Quick Overview Please!

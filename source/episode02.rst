@@ -5,8 +5,12 @@
 
 .. _hello_world:
 
-Hello World
-===========
+Episode 2: Hello World
+======================
+
+Welcome to Episode 2 of the Firefox OS App Development tutorial. This series
+will take you through the steps to write Firefox OS Apps. This episode is about
+writing our first Hello World program for Firefox OS.
 
 
 Prerequisites

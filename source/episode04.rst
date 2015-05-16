@@ -5,8 +5,12 @@
 
 .. _marketplace:
 
-Submitting your Application to the Marketplace
-==============================================
+Episode 4: Submitting your Application to the Marketplace
+=========================================================
+
+Welcome to Episode 4 of the Firefox OS App Development tutorial. This episode
+will take you through the steps for submitting your Firefox OS App to the
+Firefox Marketplace.
 
 
 Prerequisites

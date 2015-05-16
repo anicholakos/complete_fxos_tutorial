@@ -8,6 +8,13 @@
 Location, Location, Location
 ============================
 
+Welcome to Episode 5 of the Firefox OS App Development tutorial. This episode
+will take you through the steps for writing Firefox OS Apps that are location
+aware. What this means is that your application can interact with the GPS
+receiver that is present on the Firefox OS Device, retrieve the current
+position (latitude, longitude) and thereby help you write location based
+applications.
+
 
 Prerequisites
 -------------
@@ -25,11 +32,11 @@ Prerequisites
 What this Episode covers 
 ------------------------
 
-* What are Location Based Applications 
-* HTML5 Geolocation API 
-* Sample Firefox OS Application that covers using HTML5 Geolocation API 
+* What are Location Based Applications.
+* HTML5 Geolocation API.
+* Sample Firefox OS Application that covers using HTML5 Geolocation API.
 * Sample Firefox OS Application that uses HTML5 Geolocation API to retrieve
-  current position (latitude, longitude) and plot that on the Google Map 
+  current position (latitude, longitude) and plot that on the Google Map. 
 
 
 Episode 5 in Action
@@ -43,4 +50,3 @@ position and on successfully getting the current position from the GPS receiver
 on the Firefox OS phone, it will plot that location on a Google Map.
 
 All right then, the first screen of the mobile app is shown below:
-
