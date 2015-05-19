@@ -181,3 +181,80 @@ Next up is the ``index.html`` page and it is a simple jQuery Mobile page.
    :linenos:
 
 Let us discuss the ``index.html`` page in detail now:
+
+* We have included the script in the ``app.js file`` on **Line 11**.
+* There are 3 pages in the mobile application:
+    * ``home`` (**Lines 17-28**).
+    * ``add-notes`` (**Lines 31-44**).
+    * ``view-notes`` (**Lines 47-59**).
+* The ``#home`` page has two buttons for ``Add a Note`` and ``View Notes``. 
+* The ``#add-notes`` page has a form for entering the title (``#noteTile``),
+  details (``#noteDetails``) and two buttons for saving the note
+  (``#btnSaveNote``) and clearing the fields (``#btnClearNotes``).
+* The ``#view-notes`` page has a button in the header to clear all notes
+  (``#clearAllNotesBtn``) and it has a div area (``#note-list``) to display all
+  current notes, once we get them from the Local Storage.
+
+
+SaveNotes Application - ``app.js``
+----------------------------------
+
+.. literalinclude:: _static/episode06/app.js
+   :language: javascript 
+   :linenos:
+
+Let us discuss the source code in detail now since it contains the HTML5
+LocalStorage JavaScript API:
+
+* **Lines 2-5** indicate that when we click on the ``Add a Note`` button in the
+  ``home`` page, it will navigate to the ``add-notes`` page. This is
+  jQuery Mobile stuff.
+* Let us first focus on adding or saving the note, **lines 27-39**. Here you
+  will notice that we first extract out the values that the user has entered
+  for ``title`` and ``detail``. Then on **line 32** we check if the
+  ``localStorage`` object is available i.e. if support for it is there. If yes,
+  we simply invoke the ``localStorage.setItem(<key>, <value>)`` method. This
+  will save the key-value in the local storage. Note that we are using the
+  title of the note as the key. So if you enter the same title again but with
+  different details, it will overwrite the value because the key is the same.
+  So keep in mind, that the ``setItem`` method functions as both an ``Add`` and
+  an ``Update``.  That is all there is to save the item. Note that we have
+  saved a simple string value here, but you could put entire JSON Objects over
+  here (Object, Array) and read back the values.
+* Now let us focus on **lines 7-24**.  **Lines 7-9** indicate that when we
+  press the ``View Notes`` button on the ``home`` page, it will navigate to the
+  ``view-notes`` page.
+* We clear the content i.e. any existing items that were present on the page
+  by clearing the html content for ``#note-list`` on **line 11**.
+* Then we iterate through the ``localStorage`` keys one by one, retrieve the
+  values and form the jQuery Mobile collapsible div for each note entry. Note
+  that this loop (**lines 13-22**) makes use of 3 additional methods of
+  localStorage:
+
+     * We first use the ``localStorage.length`` method to get the total number
+       of items that are present.
+     * Next we get the key for each item via the ``localStorage.key(index)``
+       method.
+     * Finally, we use the ``localStorage.getItem(<key>)`` method to retrieve
+       the details for the note. 
+
+* For each note, we are simply creating a collapsible div for jQuery
+  Mobile UI and appending it to the ``#note-list`` element.
+
+
+Local Installation and Testing
+------------------------------
+
+This completes our discussion of writing Firefox OS applications that utilize
+the HTML5 LocalStorage API. Now comes the part of seeing it actually work. All
+we need to test out this application is:
+
+#. You should have installed the Firefox OS Simulator into the WebIDE.
+#. You should have downloaded/written the application as described above. We
+   will assume that the ``index.html`` and ``manifest.webapp`` files are
+   present in a directory named ``SaveNotes``. You should navigate to your own
+   directory structure when called to later.
+
+
+Debugging Local Storage
+-----------------------
