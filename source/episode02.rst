@@ -61,9 +61,9 @@ tradition and would like to say “Hello World”, it will be good to go a bit
 beyond that.
 
 What we shall write is a mobile application that will give us details on the
-different Pincodes in India. Pincodes are similar to Zipcodes if you want an
-analogy. You enter a valid Pincode in the application and it will give you the
-details of that Pincode i.e. its State name, District Name, etc.
+different ZIP codes in the United States.  You enter a valid ZIP code in the
+application and it will give you the details of that ZIP code i.e. its state
+name, city name, longitude and latitude.
 
 The mobile application makes use of an external Web service called `Zip Code
 Galore! <http://api.zippopotam.us>`__. This will also help demonstrate making
