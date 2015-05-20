@@ -243,7 +243,7 @@ functions that will have additional information.
 
 An example from the standard documentation is shown here:
 
-.. code:: javascript
+.. sourcecode:: javascript 
 
     var activity = new MozActivity({
         // Ask for the "pick" activity
