@@ -18,7 +18,7 @@ Prerequisites
 
 * You have setup your machine with the Firefox OS Simulator.  If not you can
   check out :ref:`dev_setup`, which takes you through the entire setup.
-* You have install the ``zipcodeapp`` that we covered in :ref:`hello_world`.
+* You have installed the ``zipcodeapp`` that we covered in :ref:`hello_world`.
   This tutorial uses that as an example, but if you have any other application
   installed in the Firefox WebIDE, then you should be able to follow along. But
   I strongly suggest getting the `zipcodeapp source code from Github

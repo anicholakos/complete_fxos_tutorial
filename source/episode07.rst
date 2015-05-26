@@ -236,3 +236,44 @@ IndexedDB JavaScript API:
   connection to the database (notesdb) and created one object store (notes).
   The notes that we create in the application will be saved in the notes
   datastore.
+* Let us now focus on Adding or Saving the note. Look at **lines 86–114**.
+  Here you will notice that we first extract out the value that the user has
+  entered for ``title`` and ``detail``. Then on **line 100**, we first create a
+  **transaction** object from the **database**. To create the transaction, you
+  can provide a list of datastore names (in our case it is just one i.e.
+  ``notes``) and the transaction mode i.e. read or readwrite, etc. Since we
+  want to write a new record, we are using the readwrite mode.
+* On **lines ??-??**, we are creating the standard Notes object. We store the
+  attributes for title and details.
+* Now within the transaction context, we obtain the store that we want to work
+  with on **line ??** and then add the object to it. We use the onsuccess and
+  onerror callbacks as needed.
+* Now let us focus on **lines ??-??**. **Lines ??–??** indicate that when we
+  press the ``View Notes`` button on the index page, it will navigate to the
+  ``view-notes`` page.
+* We clear the content i.e. any existing items that were present on the page
+  by clearing the html content for ``#note-list`` on **line ??**.
+* Then once again we obtain the transaction object from the database. This
+  time we pass only the list of datastore names (in our case just ``notes``).
+  If you do not provide the second parameter i.e. ``transaction mode``, it
+  means that it is **read mode**. We then object the store from the transaction
+  context on **line ??**. 
+* Next we use a cursor to iterate through each of the notes object and build
+  out the notes HTMLElement that we shall create for each note. Notice the use
+  of ``cursor.continue()`` on **line ??** to move to the next record.
+* Then for each note, we are simply creating a collapsible div for jQuery
+  Mobile UI and appending it to the ``#note-list`` element.
+* Clearing (Deleting) all the notes is also straightforward. Refer to
+  **lines ??–??**. The pattern of usage is the same. Get the Transaction. Get
+  the Store. And then call the ``clear()`` function on the store.
+
+
+Next Steps
+----------
+
+I encourage you to learn more about the IndexedDB API. Mozilla covers this in a
+lot more detail on a page on the MDN named `Using Indexed DB
+<https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB>`__.
+A good exercise to try out would be to come up with your own little database
+design. Come up with a db and some data stores. Create some indexes and play
+around with basic CRUD Operations.
