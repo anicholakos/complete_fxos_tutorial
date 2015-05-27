@@ -258,3 +258,50 @@ we need to test out this application is:
 
 Debugging Local Storage
 -----------------------
+
+If you recollect Episode 3 : Working with the OS Simulator, we had covered how tostart the WebIDE and run an application
+in the FirefoxOS simulator and debug the execution.
+
+You can debug the current state of the localStorage object in the same manner. 
+To try that out, go to the WebIDE in your Firefox browser and start the 
+SaveNotes application. Once connected to the running instance of the SaveNotes application, 
+click the wrench and the console window will be visible.
+
+   .. image:: illustrations/episode06/debugging1.png
+      :alt: Developer console
+      :height: 150px
+
+In the developer console, go ahead and type localStorage as shown above and hit Enter. 
+This will show the current state of the localStorage object as shown below. For example, I had a few notes saved 
+and hence you see that list. I suggest you give it a try by inspecting localStorage without any items, then 
+add a few items and then inspect the value again. You will be able to see the list of items that you have added.
+
+   .. image:: illustrations/episode06/debugging2.png
+      :alt: Developer console object 
+      :height: 150px
+
+
+You can even try out the different methods of the localStorage API. For example, in the screenshot below, 
+I have tried out localStorage.length. That returns me a value of 2, since I have 2 notes saved. Similarly, 
+I have also tried out localStorage.key(0) that returns me the value of the key at index 0.
+
+   .. image:: illustrations/episode06/debugging3.png
+      :alt:  Developer Console localStorage API
+      :height: 150px
+
+Next Steps
+----------
+
+I encourage you to enhance the current application by giving the ability to delete individual notes. 
+You could even opt for a more array-like representation of the data that you put in localStorage. 
+Consider adding a search feature on the View Notes screen. There are lots of opportunities for improvement!
+
+If you would like to learn more about local storage, I strongly suggest for you for try out the following tutorial
+: Dive Into HTML5 : Storage. 
+Alternately, you can also look at a couple of my blog posts: Storage 101 and More on Local Storage.
+
+Coming Up Next
+--------------
+
+The next episodes will either cover another HTML5 API for persistence called IndexedDB. 
+This is more powerful compared to localStorage and gives you an SQL-like ability to work with your databases.

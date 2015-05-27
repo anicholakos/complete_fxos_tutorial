@@ -135,6 +135,9 @@ If you want to remove an application, you will find a X icon next to each
 application when the icon is held down as shown in the screenshot below.
 Simply click that and your application should get removed from the simulator.
 
+   .. image:: illustrations/episode03/deploying_app6.png
+      :alt: Deleting apps
+      :height: 400px
 
 Observing Manifest Errors
 -------------------------
@@ -151,6 +154,10 @@ Try out the following: open up your manifest.webapp file in the editor and
 remove the name element.  Try to add or refresh the element, and notice that
 the simulator is not too happy with what you have done.  It will throw back a
 validation message. A sample screenshot of the error is shown below:
+
+   .. image:: illustrations/episode03/manifest_error1.png
+      :alt: Manifest name error
+      :height: 350px
 
 Manifest errors are common. It is normal to make mistakes here since you might
 be using a text editor to type in things.  Errors could range from XML
@@ -179,7 +186,7 @@ Using Firefox Dev Tools
 -----------------------
 
 When was the last time that you wrote an application that did not have errors
-or did not involve debugging ?  Never … correct ? It is time that you get
+or did not involve debugging? Never… correct? It is time that you get
 familiar with the Developer Tools that are shipped within the Firefox Browser
 itself.  While going into the details of the Developer Tools, it is suffice to
 cover it briefly here. Then, at the very least, you can start putting in
@@ -196,7 +203,11 @@ When you click on the wrench, it will open up the Dev Tools window in your
 browser as shown below and will allow you to monitor your application and
 easily debug it. 
 
-The screenshot of a successful the Dev Tools is shown below:
+The screenshot of the Dev Tools is shown below:
+
+   .. image:: illustrations/episode03/dev_tools1.png
+      :alt: Dev Tools Window
+      :height: 350px
 
 Now, when we run the application in the OS Simulator by entering a few zipcodes
 and get the result, you will see that network calls are traced.  Additionally
@@ -206,9 +217,12 @@ useful for understanding what is happening at different stages in your
 application.
 
 You will notice from the screenshot below that it also shows the line number of
-the file (app.js:19) which had in the console.log statement in your code.  If
-you click on the hyperlink of the filename:linenumber, it will even open up
+the file (zipcode.js:19) which had in the console.log statement in your code. If you click on the hyperlink of the filename:linenumber, it will even open up
 your code at that exact point.
+
+   .. image:: illustrations/episode03/debugging1.png
+      :alt: Console.log Statements
+      :height: 350px
 
 For more information on Dev Tools, visit Developer Tools note on the Mozilla
 Developer Network.
@@ -218,7 +232,7 @@ Debugging a Firefox OS App
 --------------------------
 
 Now comes the interesting part. We shall see how to use Developer Tools to help
-debug the application.  By debugging an application, we mean not just putting
+debug the application. By debugging an application, we mean not just putting
 console.log statements but breakpoints and single-stepping through your code
 line by line.  Just like you would in any other Developer IDE (Integrated
 Development Environment).
@@ -239,46 +253,26 @@ enough?
 On the right side of the pane, where you see the code, scroll down a bit till
 you come to the section as shown below:
 
-Go ahead and tap in the gutter near line #6 in app.js. When you tap on it a
-blue circular icon should appear, which means that the breakpoint is set.  If
+Go ahead and tap in the gutter near line #19 in zipcode.js. When you tap on it a
+blue circular icon should appear, which means that the breakpoint is set. If
 you tap again on that, it will toggle and the breakpoint will be cleared. Just
 like any other Debugging environment that you have worked with.
 
 Once again, just for the sake of repeating, we have put the breakpoint on line
-#6, which is invoked when we receive the result from the Ajax call to the
-Pincode API.
+#19, which is where we have placed our console.log statement.
 
 Now, switch over to your OS Simulator, which is running the Zipcodes App and
-enter the Pincode 90210 (a valid US Zipcode) as shown below. Click on the
+enter the zipcode 90210 (a valid US Zipcode) as shown below. Click on the
 Search button. 
 
-You will notice that the Application execution will halt at the breakpoint
-after a successful call to the public API.  Switch over to your Dev Tools view
+You will notice that in your console, nothing is logged and the zipcode information is not deisplayed because the Application execution will halt at the breakpoint. Switch over to your Dev Tools view
 and you will see the application execution waiting for you as shown below:
 
-On the right side you can view your current object and inspect many other
-standard window and Global parameters.  Now comes the fun part. Let us say that
-we want to monitor the obj object as the call happens. Remember the execution
-has stopped here for the moment and the data has come in.
+   .. image:: illustrations/episode03/breakpoint1.png
+      :alt: Breakpoint
+      :height: 300px
 
-Click on "Expand Panes" located in the top right of the Dev Tools next to the
-search bar and go to the Add watch expression area that you see on the top
-right in the Dev Tools window.  The screenshot is shown below and enter the
-variable name obj and press Enter. 
-
-If you see some error stating that it could be evaluated, that is a correct
-message since the particular line of code that initializes the obj variable has
-not yet been executed.  Now let us move ahead in the execution.
-
-Click on the Step Over button as shown above. You will find that the obj object
-gets populated in our Watch expression with the values.
-
-Let us move ahead and let the rest of the application execute. To do that,
-click on the Run button as shown below:
-
-This will move forward with the rest of execution and we will see our
-application update its results list as seen in the simulator screenshot below:
-
+To continue executing the code, simply click the play button shown in the top left corner.
 
 Next Steps
 ----------
