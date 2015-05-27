@@ -275,6 +275,111 @@ are present in other Smartphone OS like Android, Windows Phone and iOS. They
 may refer to them with different names, but the concept is the same. So if you
 have programmed in the other environments, this should be simple to understand.
 
+OK. Lets get going with understanding the code and how we can use Web
+Activities in our application.
 
-WebActivities Application
--------------------------
+
+WebActivities Application - ``manifest.webapp``
+-----------------------------------------------
+
+The first thing we should discuss is the manifest file. This should be familiar
+now and it has the standard attributes like name, version, etc. There is
+nothing special happening here.
+
+.. literalinclude:: _static/episode08/manifest.webapp
+   :language: javascript 
+   :linenos:
+
+
+WebActivities Application - ``index.html``
+------------------------------------------
+
+Next up is the ``index.html`` page, and it is a simple jQuery Mobile page.
+
+.. literalinclude:: _static/episode08/index.html
+   :language: html
+   :linenos:
+
+Let us discuss the index.html page in detail now:
+
+* We have included the script in the ``app.js`` file on **line 11**.
+* There are 2 pages in the mobile application: ``home`` beginning on
+  **line 17** and ``showImage`` starting on **line 34**
+* The ``#index`` page has several buttons for launching the various Activities
+  (Intents). They are defined on **lines 24-28**.
+* The ``showImage`` page in the mobile application will be used to display the
+  image that we selected in the pick activity.
+
+
+WebActivities Application - ``app.js``
+--------------------------------------
+
+.. literalinclude:: _static/episode08/app.js
+   :language: javascript 
+   :linenos:
+
+Let us discuss the source code in detail now. The code should be
+straightforward because invoking the Web Activity is always the same pattern.
+You need to give a name, some data filters and optional trap the ``onsuccess``
+and ``onerror`` callback methods.
+
+* First, the standard stuff. On **line 1**, the standard jQuery ``ready``
+  function is fired and you will find various click handlers defined to invoke
+  the respective activities.
+* **Line 4**: The ``#btnCall`` click invokes the dial Activity. Notice that we
+  can pass the number that needs to be dialed. Keep in mind that the phone
+  number will not get dialed automatically. The number will be pre-populated
+  with whatever you provide in the ``data.number`` attribute.
+* **Line 12**: The ``#btnSMS`` click invokes the new activity. The key here is
+  to provide the ``data.type`` to indicate what it is that we want to create a
+  new instance of and we provide the value websms/sms. Alternately, we can also
+  provide the number to send the SMS to.
+* **Line 21**: The ``#btnPickImage`` click invokes the pick Activity. We
+  also provide the type of content to pick and specify the image type filters
+  in there. Notice that we have the onsuccess and onerror callback methods
+  defined here. The onsuccess method creates an HTML <image> element and builds
+  the src for the image from ``window.URL.createObjectURL(this.result.blob)``
+  call.  Notice that the blob was returned to us in the result of the callback.
+  The ``onerror`` method is standard and we are simply displaying some message.
+* **Line 46**: The ``#btnViewWebPage`` click invokes the view Activity. And we
+  provide what is the type of content that we want to view and pass the
+  additional information (url) to view. 
+* **Line 51**: The ``#btnOpenSettings`` click invokes the configure Activity.
+  And we provide what is the target that we wish to configure i.e. device. This
+  will open up the Device Settings page.
+
+
+Registering your App as an Activity Handler
+-------------------------------------------
+
+Another interesting aspect of Web Activities is that, while this episode covers
+how to invoke web activities, you can also make your application available as
+candidate to perform a specific activity. For e.g. assume that you write a
+great Image Processing application which allows you to manipulate/tweak images
+before sharing them. You can make your application as a candidate for the Pick
+Activity too and then when any other application tries to launch the Pick
+Activity, your application will also come up in the list that is shown to the
+user.
+
+*The important thing here is that your application will need to be installed on
+the device for it to come up. Firefox OS will do the rest of making sure your
+application will come up in the list. All you have to do is define in the
+manifest.*
+
+Check out
+https://developer.mozilla.org/en-US/docs/WebAPI/Web_Activities#Registering_an_App_as_an_activity_handler
+for more information.
+
+
+Next Steps
+----------
+
+Web Activities are a key building block of any mobile application, whether it
+is a Firefox OS app or any other mobile OS. Familiarize yourself with the
+`various Web Activities
+<https://developer.mozilla.org/en-US/docs/Web/API/Web_Activities#Firefox_OS_activities>`__
+that are already present in the Firefox OS. I am pretty sure that you will
+identify a use for them depending on the functionality of your application. And
+remember, it is better to reuse existing functionality, then trying to create
+your own. Your users will also be happy with your application for allowing them
+to access functionality and UX that they are familiar with.
