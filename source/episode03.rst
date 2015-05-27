@@ -253,50 +253,26 @@ enough?
 On the right side of the pane, where you see the code, scroll down a bit till
 you come to the section as shown below:
 
-Go ahead and tap in the gutter near line #6 in zipcode.js. When you tap on it a
+Go ahead and tap in the gutter near line #19 in zipcode.js. When you tap on it a
 blue circular icon should appear, which means that the breakpoint is set. If
 you tap again on that, it will toggle and the breakpoint will be cleared. Just
 like any other Debugging environment that you have worked with.
 
 Once again, just for the sake of repeating, we have put the breakpoint on line
-#6, which is invoked when we receive the result from the Ajax call to the
-Zipcode API.
+#19, which is where we have placed our console.log statement.
 
 Now, switch over to your OS Simulator, which is running the Zipcodes App and
 enter the zipcode 90210 (a valid US Zipcode) as shown below. Click on the
 Search button. 
 
-You will notice that the Application execution will halt at the breakpoint
-after a successful call to the public API.  Switch over to your Dev Tools view
+You will notice that in your console, nothing is logged and the zipcode information is not deisplayed because the Application execution will halt at the breakpoint. Switch over to your Dev Tools view
 and you will see the application execution waiting for you as shown below:
 
    .. image:: illustrations/episode03/breakpoint1.png
       :alt: Breakpoint
-      :height: 250px
+      :height: 300px
 
-On the right side you can view your current object and inspect many other
-standard window and Global parameters.  Now comes the fun part. Let us say that
-we want to monitor the obj object as the call happens. Remember the execution
-has stopped here for the moment and the data has come in.
-
-Click on "Expand Panes" located in the top right of the Dev Tools next to the
-search bar and go to the Add watch expression area that you see on the top
-right in the Dev Tools window.  The screenshot is shown below and enter the
-variable name obj and press Enter. 
-
-If you see some error stating that it could be evaluated, that is a correct
-message since the particular line of code that initializes the obj variable has
-not yet been executed.  Now let us move ahead in the execution.
-
-Click on the Step Over button as shown above. You will find that the obj object
-gets populated in our Watch expression with the values.
-
-Let us move ahead and let the rest of the application execute. To do that,
-click on the Run button as shown below:
-
-This will move forward with the rest of execution and we will see our
-application update its results list as seen in the simulator screenshot below:
-
+To continue executing the code, simply click the play button shown in the top left corner.
 
 Next Steps
 ----------
