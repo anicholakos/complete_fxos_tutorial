@@ -10,10 +10,12 @@ Location, Location, Location
 
 Welcome to Episode 5 of the Firefox OS App Development Tutorial. This episode
 will take you through the steps for writing Firefox OS Apps that are location
-aware. What this means is that your application can interact with the GPS
-receiver that is present on the Firefox OS Device, retrieve the current
-position (latitude, longitude) and thereby help you write location based
-applications.
+aware. What this means is that your application can interact with the
+`GPS receiver <http://en.wikipedia.org/wiki/GPS_navigation_device>`__
+that is present on the Firefox OS Device, retrieve the current position
+(`latitude <http://en.wikipedia.org/wiki/Latitude>`__, `longitude
+<http://en.wikipedia.org/wiki/Longitude>`__) and thereby help you write
+location based applications.
 
 
 Prerequisites
@@ -45,8 +47,19 @@ Episode 5 in Action
 Let us check out the application in action first. This will help you understand
 what we shall be achieving by the end of this tutorial.
 
-What we shall write is a mobile application that will retrieves our current
-position and on successfully getting the current position from the GPS receiver
-on the Firefox OS phone, it will plot that location on a Google Map.
+What we shall write is two mobile applications that will retrieve our current
+position. On successfully getting the current position from the GPS receiver on
+the Firefox OS phone, the first app will simply display the current longitude
+and latitude, while the second app will plot that location on a map.
 
-All right then, the first screen of the mobile app is shown below:
+All right then, the first app, Locate Me, is shown below:
+
+.. image:: illustrations/episode05/locateme3.png
+   :alt: LocateMe app with location 
+   :height: 350px
+
+Here is the second app, Map Me:
+
+.. image:: illustrations/episode05/mapme3.png
+   :alt: MapMe app with location 
+   :height: 350px
