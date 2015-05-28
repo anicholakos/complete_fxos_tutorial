@@ -25,7 +25,7 @@ Succeed
 <http://rominirani.com/2013/07/23/firefox-os-the-mobile-web-platform-that-needs-to-succeed/>`__.
 
 
-What is Firefox OS? A Quick Overview Please!
+What is Firefox OS? A Quick Overview, Please!
 --------------------------------------------
 
 As with many things of this nature, it is a very good idea to start with
@@ -35,10 +35,10 @@ get a broad overview of what Firefox is and how it came to be.
 
 .. index:: supported devices 
 
-Current list of devices support Firefox OS
+Current List of Devices Support Firefox OS
 ------------------------------------------
 
-The mobile phone space is rapidly changing.  For a current list of the
+The mobile phone space is rapidly changing. For a current list of the
 countries where Firefox OS phones can be purchased and which vendors sell them
 see `this page <https://www.mozilla.org/en-US/firefox/os/devices/>`__.
 
@@ -70,7 +70,7 @@ them.
 
 .. index:: marketplace
 
-Is there a Firefox Marketplace?
+Is There a Firefox Marketplace?
 -------------------------------
 
 Yes, there is a Firefox Marketplace for your apps. This is one similar lines
@@ -95,10 +95,10 @@ to the Marketplace in a future episode. This will suffice for now.
 
 .. index:: dev tools
 
-Can we get going with the installation of Dev Tools, please?
+Can We Get Going With the Installation of Dev Tools, Please?
 ------------------------------------------------------------
 
-Sorry mate ! There is no need for any special IDE for Firefox OS App
+Sorry, mate! There is no need for any special IDE for Firefox OS App
 Development. Feel free to use whatever tools you have in your toolbox for Web
 Development. As long as you are able to generate a standards based HTML5 Web
 app, you will be all set. All you really need is your good old text editor to

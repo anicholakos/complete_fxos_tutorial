@@ -29,7 +29,7 @@ Firefox OS supports 2 kinds of applications: **Hosted Apps** and
 **Packaged Apps**.
 
 **Hosted Apps** are those that are hosted at a web url. All the files that
-compose the app i.e. HTML, JS, CSS, images, etc are all present at the hosted
+compose the app, i.e. HTML, JS, CSS, images, etc, are all present at the hosted
 url itself. No file is present on the device and the device will need to be
 connected to the internet to use it. There are mechanisms now in HTML5 like
 AppCache that allow you to cache assets of the file locally though for most
@@ -40,7 +40,7 @@ users will get the latest version immediately on next access. The flip side is
 that they have to be connected.
 
 **Packaged Apps** take the opposite approach. All the files that compose your
-web app i.e. HTML, JS, CSS, images, etc are packaged into a ZIP file. The ZIP
+web app, i.e. HTML, JS, CSS, images, etc, are packaged into a ZIP file. The ZIP
 file is downloaded on your device and the app is installed locally.
 Applications that are deployed in this fashion can function without the device
 being connected to the internet. However, if your application makes use of some
@@ -48,7 +48,6 @@ public API or external web service, you will need to be connected.
 
 The Firefox Marketplace which we shall see in a later episode supports listing
 of both Hosted and Packaged Applications.
-
 
 .. index:: ajax, API
 
@@ -98,7 +97,7 @@ you the hassle of downloading the dependent libraries.
 Go ahead and download the code from: `https://github.com/jelkner/zipcodeapp
 <https://github.com/jelkner/zipcodeapp>`__
 
-Extract all the code in some folder. For e.g. on my machine, the code is
+Extract all the code in some folder. For example, on my machine, the code is
 present in ``$HOME/Projects/zipcodeapp`` but it could be any directory of your
 choice. You should see a folder structure inside of ``zipcodeapp``, that looks
 like this:
@@ -128,7 +127,7 @@ below:
 
 The UI is based on `jQuery Mobile <https://jquerymobile.com/>`__, which is a
 responsive web UI framework. I strongly suggest to use UI frameworks that are
-responsive in nature i.e. they adapt to different screen sizes and resolutions.
+responsive in nature as in they adapt to different screen sizes and resolutions.
 Increasingly the web is being accessed by people with different screen sizes
 and resolutions and it is imperative that your web UI adjust itself gracefully
 for optimum web display.  You can also choose to go for frameworks like
@@ -138,7 +137,7 @@ but I leave that choice to you.
 
 One point to note here: One may argue about why a simple application like this
 needs heavy frameworks like jQuery and jQuery Mobile. Can’t we just get going
-with our plain simple HTML coded by hand. Yes you can. My intention here is not
+with our plain simple HTML coded by hand? Yes you can. My intention here is not
 to demonstrate optimum coding techniques but to show you that you can use your
 existing frameworks while coding Firefox OS apps. The idea is to indicate to
 the reader that all the tools/frameworks that he/she is used to should be used
@@ -248,8 +247,8 @@ Let us discuss the entries:
   user launches your app. The value should be a relative path in your
   application directory. In our case, the file we want to launch on application
   start is ``index.html`` and since the ``manifest.webapp`` file is in the same
-  folder as the ``index.html``, so we simply specify the value as
-  ``/index.html``.  But make it a relative path in case the first page is
+  folder as the ``index.html``, we simply specify the value as
+  ``/index.html``. But make it a relative path in case the first page is
   nested inside some other directory than where the ``manifest.webapp`` is
   present.
 * When your mobile application is installed on the Firefox OS Device, the OS
@@ -266,7 +265,7 @@ Let us discuss the entries:
   is because our application needs to invoke some special APIs i.e. in our case
   it is the Ajax call that is made to the external web service. Hence we have
   to specify one property name type and its value is set to privileged. Only
-  privileged apps have access to special Web APIs for e.g. some of the device
+  privileged apps have access to special Web APIs for example, some of the device
   APIs, which we shall be seeing later. It is good to have this setup now
   itself. And since we have mentioned that our application type is privileged,
   we have to also mention which permissions you need. And that is specified by
@@ -298,7 +297,7 @@ is:
 #. A working internet connection from your machine.
 #. You should have downloaded/written the application as described above. We
    will assume that the ``index.html`` and ``manifest.webapp`` file are present
-   in a directory named ``zipecodeapp``. You should navigate to your own
+   in a directory named ``zipcodeapp``. You should navigate to your own
    directory structure when called to later.
 
 Steps to install the application in your Firefox OS Simulator are given below:
@@ -365,8 +364,8 @@ Next Steps
 I encourage you to enhance the current application by providing error checks,
 validation, etc. If you want, you could possibly try out writing your own app.
 If you are looking for other public web apis to call, take a look at
-ProgrammableWeb, they list thousands of APIs. Maybe you could write a Weather
-App, Currency App ... the world is yours.
+`ProgrammableWeb <http://www.programmableweb.com>`__,  they list thousands of
+APIs. Maybe you could write a Weather App, Currency App... the world is yours.
 
 
 Coming up Next
