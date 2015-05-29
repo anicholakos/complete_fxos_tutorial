@@ -155,7 +155,7 @@ Few things to do about the Storage API:
 SaveNotes Application
 ---------------------
 
-OK. Lets get going with understand the code and how the Local Storage API has
+OK. Let's get going with understand the code and how the Local Storage API has
 been used to persist (save) notes in our application.
 
 
