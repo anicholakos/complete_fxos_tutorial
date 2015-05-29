@@ -102,7 +102,7 @@ You should then see the device listed under the ``Select Device`` menu.
 Adding and Removing an Application
 ----------------------------------
 
-To install an app on a device, either the WebIDE or an actual device do the
+To install an app on a device, either the WebIDE or an actual device, do the
 following:
 
 #. Select ``Open App`` -> ``Open Packaged App...`` and navidate to the source
@@ -209,7 +209,7 @@ The screenshot of the Dev Tools is shown below:
       :alt: Dev Tools Window
       :height: 350px
 
-Now, when we run the application in the OS Simulator by entering a few zipcodes
+Now, when we run the application in the OS Simulator by entering a few ZIP codes
 and get the result, you will see that network calls are traced.  Additionally
 any console.log statements that you would have used in your code (and which we
 did for printing out the result) will be seen in the output too.  This is very
@@ -238,7 +238,7 @@ line by line.  Just like you would in any other Developer IDE (Integrated
 Development Environment).
 
 Follow the steps below patiently. We will assume that you have launched the
-Zipcodes application locally and it has come up with its first screen on the OS
+ZIP codes application locally and it has come up with its first screen on the OS
 Simulator. 
 
 Make sure you have started your Firefox OS App as explained in the earlier
@@ -254,7 +254,7 @@ On the right side of the pane, where you see the code, scroll down a bit till
 you come to the section as shown below:
 
 Go ahead and tap in the gutter near line #19 in zipcode.js. When you tap on it a
-blue circular icon should appear, which means that the breakpoint is set. If
+circular icon should appear, which means that the breakpoint is set. If
 you tap again on that, it will toggle and the breakpoint will be cleared. Just
 like any other Debugging environment that you have worked with.
 
@@ -262,10 +262,10 @@ Once again, just for the sake of repeating, we have put the breakpoint on line
 #19, which is where we have placed our console.log statement.
 
 Now, switch over to your OS Simulator, which is running the Zipcodes App and
-enter the zipcode 90210 (a valid US Zipcode) as shown below. Click on the
+enter the zipcode 90210 (a valid US ZIP code) as shown below. Click on the
 Search button. 
 
-You will notice that in your console, nothing is logged and the zipcode information is not deisplayed because the Application execution will halt at the breakpoint. Switch over to your Dev Tools view
+You will notice that in your console, nothing is logged and the ZIP code information is not deisplayed because the Application execution will halt at the breakpoint. Switch over to your Dev Tools view
 and you will see the application execution waiting for you as shown below:
 
    .. image:: illustrations/episode03/breakpoint1.png
@@ -278,7 +278,7 @@ Next Steps
 ----------
 
 I encourage you try out debugging because it will be needed as you progress
-along in your Firefox Apps.  Put in some breakpoints, single step through the
+along in your Firefox Apps. Put in some breakpoints, single step through the
 code, inspect some variables, etc.
 
 
