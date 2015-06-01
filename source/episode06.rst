@@ -20,12 +20,9 @@ Prerequisites
 
 * You have setup your machine with the Firefox OS Simulator.  If not you can
   check out :ref:`dev_setup`, which takes you through the entire setup.
-* You have install the ``zipcodeapp`` that we covered in :ref:`hello_world`.
+* You have installed the ``zipcodeapp`` that we covered in :ref:`hello_world`.
   This tutorial uses that as an example, but if you have any other application
-  installed in the Firefox WebIDE, then you should be able to follow along. But
-  I strongly suggest getting the `zipcodeapp source code from Github
-  <https://github.com/jelkner/zipcodeapp>`__, and installing it as discussed
-  in the previous episode.
+  installed in the Firefox WebIDE, then you should be able to follow along.
 
 
 What this Episode covers 
@@ -117,10 +114,9 @@ that allows the application to store application specific data and use it as
 needed. Here are some examples of how you could use storage:
 
 * Games: You need to store the current moves in an application, so that if the
-  user were to come later later to the application, you can replay back the
-  moves. Save high scores maybe?
-* Business Apps: How about saving information locally. E.g. taking offline
-  orders, writing notes, etc. notes locally and looking them up.
+  user were to come back later to the application, it would replay back the
+  moves. This also allows applications to store a user's highscores in a game.
+* Business Apps: How about saving information locally? For example, taking offline orders, writing notes locally, and looking them up later.
 
 You will easily be able to think of more use cases.
 
@@ -135,7 +131,7 @@ key-based values.
 Few things to do about the Storage API:
 
 * The Local Storage Object that is provided to you is available under
-  ``window.localStorage``. But for all purposes, you can use as
+  ``window.localStorage``, but for all purposes, you can use as
   ``localStorage``. All the methods for saving, removing, etc will be invoked
   in a format that looks like ``localStorage.<some-method>``.
 * There are just 6 methods that you need to be familiar with to understand the
@@ -146,10 +142,10 @@ Few things to do about the Storage API:
     * ``setItem(<key>,<value>)``: Sets a value (Creates or overwrites) for a
       key.
     * ``removeItem(<key>)``: Deletes the entry for that particular key.
-    * ``clear()``: removes all the entries in the Local Storage.
-    * ``length``: returns a count of the number of keys in the local storage
+    * ``clear()``: Removes all the entries in the Local Storage.
+    * ``length``: Returns a count of the number of keys in the local storage.
     * ``key(<index>)``: returns the value for a key as per the index. The
-      index ranges from 0 to (length-1)
+      index ranges from 0 to (length-1).
 
 
 SaveNotes Application
@@ -163,7 +159,7 @@ SaveNotes Application - ``manifest.webapp``
 -------------------------------------------
 
 The first thing we should discuss is the manifest file. This should be familiar
-now and it has the standard attributes like name, version, etc. There is
+now and it has the standard attributes like name and version. There is
 nothing special happening here.
 
 .. literalinclude:: _static/episode06/manifest.webapp
@@ -259,7 +255,7 @@ we need to test out this application is:
 Debugging Local Storage
 -----------------------
 
-If you recollect Episode 3 : Working with the OS Simulator, we had covered how tostart the WebIDE and run an application
+If you recollect Episode 3 : Working with the OS Simulator, we had covered how to start the WebIDE and run an application
 in the FirefoxOS simulator and debug the execution.
 
 You can debug the current state of the localStorage object in the same manner. 
@@ -293,15 +289,15 @@ Next Steps
 ----------
 
 I encourage you to enhance the current application by giving the ability to delete individual notes. 
-You could even opt for a more array-like representation of the data that you put in localStorage. 
+You could even opt for a more array-like representation of the data that you put in ``localStorage``. 
 Consider adding a search feature on the View Notes screen. There are lots of opportunities for improvement!
 
-If you would like to learn more about local storage, I strongly suggest for you for try out the following tutorial
-: Dive Into HTML5 : Storage. 
-Alternately, you can also look at a couple of my blog posts: Storage 101 and More on Local Storage.
+If you would like to learn more about local storage, I strongly suggest for you for try out the following tutorial: `Dive Into HTML5: Storage <http://diveintohtml5.info/storage.html>`__.
+
+Alternatively, you can also look at a couple of my blog posts: `Storage 101 <http://rominirani.com/html5-recipes-storage-101/>`__ and `More on Local Storage <http://rominirani.com/html5-recipes-more-on-storage/>`__.
 
 Coming Up Next
 --------------
 
 The next episodes will either cover another HTML5 API for persistence called IndexedDB. 
-This is more powerful compared to localStorage and gives you an SQL-like ability to work with your databases.
+This is more powerful compared to ``localStorage`` and gives you an SQL-like ability to work with your databases.

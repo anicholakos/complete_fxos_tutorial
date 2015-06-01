@@ -26,7 +26,7 @@ Succeed
 
 
 What is Firefox OS? A Quick Overview, Please!
---------------------------------------------
+---------------------------------------------
 
 As with many things of this nature, it is a very good idea to start with
 the `Firefox OS Wikipedia page <http://en.wikipedia.org/wiki/Firefox_OS>`__ to

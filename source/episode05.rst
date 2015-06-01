@@ -23,12 +23,9 @@ Prerequisites
 
 * You have setup your machine with the Firefox OS Simulator.  If not you can
   check out :ref:`dev_setup`, which takes you through the entire setup.
-* You have install the ``zipcodeapp`` that we covered in :ref:`hello_world`.
+* You have installed the ``zipcodeapp`` that we covered in :ref:`hello_world`.
   This tutorial uses that as an example, but if you have any other application
-  installed in the Firefox WebIDE, then you should be able to follow along. But
-  I strongly suggest getting the `zipcodeapp source code from Github
-  <https://github.com/jelkner/zipcodeapp>`__, and installing it as discussed
-  in the previous episode.
+  installed in the Firefox WebIDE, then you should be able to follow along.
 
 
 What this Episode covers 
@@ -44,7 +41,7 @@ What this Episode covers
 Episode 5 in Action
 -------------------
 
-Let us check out the application in action first. This will help you understand
+Let's check out the application in action first. This will help you understand
 what we shall be achieving by the end of this tutorial.
 
 What we shall write is two mobile applications that will retrieve our current
@@ -63,3 +60,82 @@ Here is the second app, Map Me:
 .. image:: illustrations/episode05/mapme3.png
    :alt: MapMe app with location 
    :height: 350px
+
+
+Download Full Source Code
+-------------------------
+
+I suggest that you begin with a full download of the project source code. Since Map Me depends on jQuery, it will save you the hassle of downloading the dependent libraries.
+
+Go ahead & download the code from: https://github.com/jelkner/WhereIAm
+
+You'll notice that there are two seperate folders for both applications. Go ahead and extract all the code in some folder, on my machine the code is present in /home/anicholakos/Projects/WhereIAm but it could be any directory of your choice. Now when you want to load up one of the apps, just select one of the folders in WhereIAm.
+
+
+Location Based Applications
+---------------------------
+
+Smartphones come with a GPS receiver that is able to provide you with the current position of the device. Location Based Applications are those applications that make use of the device location to give you better localized data. If you are searching for restaurants in an area where you are currently taking a walk, it makes sense for the application to utilize the current location via the GPS and provide you with restaurants that within a certain radius around you. Location is here to stay and the ability of an application to know the users location is key.
+
+
+HTML5 Geolocation API
+---------------------
+
+HTML5 has support for determining the location of the user via the `Geolocation API <http://diveintohtml5.info/geolocation.html>`__. It supports both a one time location retrieval and also continuous location retrieval depending on the need of your application. Geolocation support is determined via the navigator.geolocation object in the browser. Firefox OS supports the HTML5 Geolocation support and you will find similar support in most mobile browsers and desktop browsers out there. You can check out the following `table <http://caniuse.com/#feat=geolocation>`__ to see what browsers support geolocation.
+
+In this episode, we shall be looking at the one-time location retrieval via the HTML5 Geolocation API. While the continous location retrieval is also available, I suggest that you should have a good use case for the same because you need to keep in mind that the easiest way to drain out the phone battery is via a badly written GPS application.
+
+
+Locate Me
+---------
+
+In this application, we shall first look at the HTML5 Geolocation API so that we can familiar with its usage. In the next application, we shall cover using that location to plot on the Google Map.
+
+Let's check out the application running on the Firefox OS Simulator. The first screenshot is shown below and is a simple screen with a button labeled LocateMe.
+
+.. image:: illustrations/episode05/locateme1.png
+   :alt: LocateMe app without coordinates 
+   :height: 350px
+
+When you click on the Where am I? button, it will popup a permission screen as shown below. This permission screen is not part of the application but is a standard one that all browsers display to ask for permission of the user.
+
+.. image:: illustrations/episode05/locateme2.png
+   :alt: LocateMe app asking for permission for GPS
+   :height: 350px
+
+Let us spend a minute on why this is needed. Determining the location of a device behind the scenes has privacy implications and the recommended practice is to always ask the user for permission, also known an opt-in. HTML5 Geolocation specification makes it clear that browsers need to ask the user for permission before determining the location. Each browser does this differently via a bar that typically appears just under the address bar and the Firefox OS behavior is what you are seeing below.
+
+
+* If you say “Yes” to the browser asking for permission, then it goes about its work to determine the location.
+* If you refuse permission, then the error callback method (which we shall see in a while) will have the value PERMISSION_DENIED. So in well-written mobile applications, you should be prepared for a user refusing permission to get the location.
+* Once you give the browser permission, it can remember that option on subsequent uses as you can see from the Remember my choice toggle button. You may also go into the Device Phone Settings and clear the permission.
+
+OK, so we can safely click on the Allow button. This will use the HTML5 Geolocation API, retrieve the current latitude, longitude and display them on the screen.
+
+Let's now take a look at the code.
+
+
+LocateMe - manifest.webapp
+--------------------------
+
+The first thing we should discuss is the manifest file. This should be familiar now and it has the standard attributes like name, version, etc.
+
+What is specific to our example and important is to note that we have an additional permission for geolocation on line #14.
+
+.. literalinclude:: _static/episode05/locateme/manifest.webapp
+   :language: json
+   :linenos:
+
+LocateMe - index.html
+---------------------
+
+Next up is the index.html page and it contains a button LocateMe on Line #21. The button click handler and all relevant source code is present in app.js as referenced on Line #10.
+
+.. literalinclude:: _static/episode05/locateme/index.html
+   :language: html
+   :linenos:
+
+LocateMe - gpsapp.js
+--------------------
+
+This file contains the code that is invoked when the button is clicked on Line #3.
