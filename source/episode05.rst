@@ -139,3 +139,35 @@ LocateMe - gpsapp.js
 --------------------
 
 This file contains the code that is invoked when the button is clicked on Line #3.
+
+.. literalinclude:: _static/episode05/locateme/gpsapp.js
+   :language: javascript
+   :linenos:
+
+Let us discuss the source code in detail now since it contains the HTML5 Geolocation JavaScript API.
+
+
+* The function findMyCurrentLocation() is invoked when the Button is clicked.
+* As mentioned before, Geolocation support in the browser is present via the navigator.geolocation object. So we first initialize a geoService object on Line #7.
+* We determine if the browser support the HTML5 Geolocation API on lines #8-12. If it does not, we simply display that message else we invoke the getCurrentPosition method on the navigator.geolocation object.
+* Notice that we have provided it 2 parameters. The first parameter is the success callback function. This function will be invoked when the application is able to determine the location. The second parameter is the error callback method. This method will be invoked when the browser is unable to determine the location.
+* If the browser is able to determine the location, the success callback method is invoked. In our case, it is the showCurrentLocation method on Line #14. A parameter of type Position is passed into this success callback method. The Position object has an attribute coords of type Coordinates that contains all the information about the Location that you want. We extract out the latitude and longitude as shown in the code and we display that. In addition to them, you can also extract out other attributes like altitude, speed, heading, etc.
+* If your location could not be determined, the error callback method is invoked. In our case, it is the errorHandler method on Line #18. A parameter of type PositionError is passed to it. You can use this PositionError method to determine the exact reason why it failed via the code and message attributes. It could have 3 values:  PositionError.PERMISSION_DENIED, PositionError.UNAVAILABLE and PositionError.TIMEOUT. So if you need to do some custom handling or error message depending on the error, you can check the value and then give a custom message instead of the message attribute.
+
+Note: We can also provide a 3rd parameter to the getCurrentPosition method. This parameter is of type PositionsOptions, where we specify extra criteria to help guide the Geolocation API for the kind of location data characteristics. For example, we could have passed {enableHighAccuracy : “true”} , which tells the API to use the highest possible accuracy. Other attributes that you could specify are timeout and maxAge. Refer to the specification for more detail.
+
+
+MapMe
+-----
+
+We will now extend our code to not just display the current latitude, longitude but to also show the Google Map with a Marker that will represent our current location.
+
+Earlier in this post, we had demonstrated Application 2 in Action, so I am not repeating the screenshots over here.
+
+The manifest file for this application remains the same except for the launch_path property values that now points to map.html.
+
+.. literalinclude:: _static/episode05/mapme/manifest.webapp
+   :language: json
+   :linenos:
+
+                            
