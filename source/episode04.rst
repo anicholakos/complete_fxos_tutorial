@@ -104,14 +104,11 @@ Here are the next things to take care of:
 
 * Review your manifest.webapp file in detail. Pay special importantance to name and description fields. The Firefox Marketplace will read the name and description only from the Manifest file. And nothing is more important that choosing a good name for your Firefox OS Application and describing it in simple terms. Spend some time on this since a lot of users will search for Applications based on some keywords that come to their mind.
 * You will need to decide which Category your application will fall under. As we shall see a little later, the marketplace presents several categories that you can place your application under. Choose a category with care. Typically it is the first filter that users use while searching for your app in the marketplace.
-* You need to get Application Icons and Screenshots for your Application in place because they will be used for submission. At the minimum you will need a 60×60 Application Icon. So far we had seen adding 16,32,48, etc icons to the manifest.webapp file but the Firefox OS Marketplace looks for a 60×60 icon. So do that the icon to your application and update your manifest file with it. For example, your manifest.webapp entry for icons should look something like this:
-“icons”: {
-“16”: “/images/icon_016.png”,
-“32”: “/images/icon_032.png”,
-“48”: “/images/icon_048.png”,
-“60”: “/images/icon_060.png”,
-“128”: “/images/icon_128.png”
-}
+* You need to get Application Icons and Screenshots for your Application in place because they will be used for submission. At the minimum you will need a 60×60 Application Icon. So far we had seen adding 16,32,48, etc icons to the manifest.webapp file but the Firefox OS Marketplace looks for a 60×60 icon. So do that the icon to your application and update your manifest file with it. For example, your manifest.webapp entry for icons should look something like lines #6-9:
+
+.. literalinclude:: _static/episode02/manifest.webapp
+   :language: json
+   :linenos:
 
 
 Submitting to Firefox Marketplace

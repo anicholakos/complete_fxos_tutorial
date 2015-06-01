@@ -302,7 +302,7 @@ is:
 
 Steps to install the application in your Firefox OS Simulator are given below:
 
-#. Launch your Firefox Browswer.  Next, launch the WebIDE by pressing
+#. Launch your Firefox Browser.  Next, launch the WebIDE by pressing
    ``Shift+F8``, and end up where we were at the end of
    :ref:`dev_setup`:
 
