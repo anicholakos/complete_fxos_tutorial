@@ -6,10 +6,10 @@ Firefox OS App Development Tutorial
 
 by Romin Irani
 
-remixed and updated by Jeff Elkner, Sotirios Nicholakos, Finn Cardiff, and
+remixed and updated by Sotirios Nicholakos, Jeff Elkner, Finn Cardiff, and
 Alex Hirschberg
 
-Last updated: 1 June 2015
+Last updated: 2 June 2015
 
 Episodes
 ========
