@@ -19,17 +19,17 @@ which lets you store complex objects. That's what this episode is about.
 Prerequisites
 -------------
 
-* You have setup your machine with the Firefox OS Simulator.  If not you can
+* You have setup your machine with the Firefox OS Simulator. If not, you can
   check out :ref:`dev_setup`, which takes you through the entire setup.
-* You have a basic understanding of writing Firefox OS Apps.  If not, I
+* You have a basic understanding of writing Firefox OS Apps. If not, I
   strongly suggest refering to earlier episodes, especially :ref:`hello_world`,
   that covers how to write your first Firefox OS App.
 
 
-What this Episode covers 
+What this Episode Covers 
 ------------------------
 
-* What is the `HTML5 IndexedDB API <http://www.w3.org/TR/IndexedDB/>`__.
+* What is the `HTML5 IndexedDB API <http://www.w3.org/TR/IndexedDB/>`__?
 * Sample Firefox OS Application that covers using the HTML5 IndexedDB API. 
   We shall be extending the same Notes application that we wrote earlier. We
   will replace the localStorage API calls with the IndexedDB API calls in this

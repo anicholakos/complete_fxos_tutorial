@@ -45,7 +45,7 @@ see `this page <https://www.mozilla.org/en-US/firefox/os/devices/>`__.
 
 .. index:: needed skills 
 
-What do I need to learn?
+What Do I Need to Learn?
 ------------------------
 
 Chances are that if you are web developer, you know everything there is to

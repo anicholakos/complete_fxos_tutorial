@@ -76,7 +76,7 @@ All right then, the first screen of the mobile app is shown below:
    :alt: App before entering pin code 
    :height: 350px
 
-When we enter a valid pincode e.g. **20001**, the app makes a call to the
+When we enter a valid ZIP code e.g. **20001**, the app makes a call to the
 ZIP code service and retrieves/parses/displays the information as shown below:
 
 .. image:: illustrations/episode02/app_in_action2.png
@@ -143,7 +143,7 @@ existing frameworks while coding Firefox OS apps. The idea is to indicate to
 the reader that all the tools/frameworks that he/she is used to should be used
 as needed.
 
-So moving on to the UI part, focus on lines 14-30 for the user interface.
+So moving on to the UI part, focus on **lines 14-30** for the user interface.
 
 * **Line 21** declares the input field that we shall use to allow for the user
   to enter the pincode. Note that we make good use of HTML5 attributes like

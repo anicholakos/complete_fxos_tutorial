@@ -120,7 +120,6 @@ following:
       :alt: App deployed to simulator 
       :height: 400px
 
-
    .. image:: illustrations/episode02/deploying_app4.png
       :alt: App deployed to simulator 
       :height: 400px
@@ -253,16 +252,16 @@ enough?
 On the right side of the pane, where you see the code, scroll down a bit till
 you come to the section as shown below:
 
-Go ahead and tap in the gutter near line #19 in zipcode.js. When you tap on it a
+Go ahead and tap in the gutter near **line 19** in ``zipcode.js``. When you tap on it a
 circular icon should appear, which means that the breakpoint is set. If
 you tap again on that, it will toggle and the breakpoint will be cleared. Just
 like any other Debugging environment that you have worked with.
 
-Once again, just for the sake of repeating, we have put the breakpoint on line
-#19, which is where we have placed our console.log statement.
+Once again, just for the sake of repeating, we have put the breakpoint on **line
+19**, which is where we have placed our console.log statement.
 
 Now, switch over to your OS Simulator, which is running the Zipcodes App and
-enter the zipcode 90210 (a valid US ZIP code) as shown below. Click on the
+enter the ZIP code 90210 (a valid US ZIP code) as shown below. Click on the
 Search button. 
 
 You will notice that in your console, nothing is logged and the ZIP code information is not deisplayed because the Application execution will halt at the breakpoint. Switch over to your Dev Tools view
