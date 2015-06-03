@@ -115,28 +115,28 @@ OK, so we can safely click on the Allow button. This will use the HTML5 Geolocat
 Let's now take a look at the code.
 
 
-LocateMe - manifest.webapp
---------------------------
+Locate Me - manifest.webapp
+---------------------------
 
 The first thing we should discuss is the manifest file. This should be familiar now and it has the standard attributes like name, version, etc.
 
-What is specific to our example and important is to note that we have an additional permission for geolocation on line #14.
+What is specific to our example and important is to note that we have an additional permission for geolocation on **line #14**.
 
 .. literalinclude:: _static/episode05/locateme/manifest.webapp
    :language: json
    :linenos:
 
-LocateMe - index.html
----------------------
+Locate Me - index.html
+----------------------
 
-Next up is the index.html page and it contains a button LocateMe on Line #21. The button click handler and all relevant source code is present in app.js as referenced on Line #10.
+Next up is the index.html page and it contains a button ``LocateMe`` on **line #21**. The button click handler and all relevant source code is present in app.js as referenced on **line #10**.
 
 .. literalinclude:: _static/episode05/locateme/index.html
    :language: html
    :linenos:
 
-LocateMe - gpsapp.js
---------------------
+Locate Me - gpsapp.js
+---------------------
 
 This file contains the code that is invoked when the button is clicked on Line #3.
 
@@ -147,27 +147,68 @@ This file contains the code that is invoked when the button is clicked on Line #
 Let us discuss the source code in detail now since it contains the HTML5 Geolocation JavaScript API.
 
 
-* The function findMyCurrentLocation() is invoked when the Button is clicked.
-* As mentioned before, Geolocation support in the browser is present via the navigator.geolocation object. So we first initialize a geoService object on Line #7.
-* We determine if the browser support the HTML5 Geolocation API on lines #8-12. If it does not, we simply display that message else we invoke the getCurrentPosition method on the navigator.geolocation object.
-* Notice that we have provided it 2 parameters. The first parameter is the success callback function. This function will be invoked when the application is able to determine the location. The second parameter is the error callback method. This method will be invoked when the browser is unable to determine the location.
-* If the browser is able to determine the location, the success callback method is invoked. In our case, it is the showCurrentLocation method on Line #14. A parameter of type Position is passed into this success callback method. The Position object has an attribute coords of type Coordinates that contains all the information about the Location that you want. We extract out the latitude and longitude as shown in the code and we display that. In addition to them, you can also extract out other attributes like altitude, speed, heading, etc.
-* If your location could not be determined, the error callback method is invoked. In our case, it is the errorHandler method on Line #18. A parameter of type PositionError is passed to it. You can use this PositionError method to determine the exact reason why it failed via the code and message attributes. It could have 3 values:  PositionError.PERMISSION_DENIED, PositionError.UNAVAILABLE and PositionError.TIMEOUT. So if you need to do some custom handling or error message depending on the error, you can check the value and then give a custom message instead of the message attribute.
+* When the button is clicked on **line 3**, the application checks to see if GPS is available which is shown on **lines 4-13**. If the browser supports the HTML5 Geolocation API, then the coordinates are stored, otherwise an error message is displayed. As mentioned before, Geolocation support in the browser is present via the navigator.geolocation object.
+* Notice that two parameters are provided if Geolocation is supported on **lines 7-9**. The first parameter is the success callback function. This function will be invoked when the application is able to determine the location. The second parameter is the error callback method. This method will be invoked when the browser is unable to determine the location.
+* If the browser is able to determine the location, the coordinates are stored using the store function that is declared on **line 17**. The stored string contains all the information about the location that you want. We extract out the latitude and longitude as shown in the code and we display that. In addition to them, you can also extract out other attributes like altitude, speed, heading, etc.
+* If your location could not be determined, the error callback method is invoked. In our case, it is the errorHandler method on **line 7**. A parameter of type PositionError is passed to it. You can use this PositionError method to determine the exact reason why it failed via the code and message attributes. It could have 3 values:  PositionError.PERMISSION_DENIED, PositionError.UNAVAILABLE and PositionError.TIMEOUT. So if you need to do some custom handling or error message depending on the error, you can check the value and then give a custom message instead of the message attribute.
 
-Note: We can also provide a 3rd parameter to the getCurrentPosition method. This parameter is of type PositionsOptions, where we specify extra criteria to help guide the Geolocation API for the kind of location data characteristics. For example, we could have passed {enableHighAccuracy : “true”} , which tells the API to use the highest possible accuracy. Other attributes that you could specify are timeout and maxAge. Refer to the specification for more detail.
+Note: We can also provide a 3rd parameter that is of type PositionsOptions, where we specify extra criteria to help guide the Geolocation API for the kind of location data characteristics. For example, we could have passed {enableHighAccuracy : “true”} , which tells the API to use the highest possible accuracy. Other attributes that you could specify are timeout and maxAge. Refer to the specification for more detail.
 
 
-MapMe
------
+Map Me
+------
 
-We will now extend our code to not just display the current latitude, longitude but to also show the Google Map with a Marker that will represent our current location.
-
-Earlier in this post, we had demonstrated Application 2 in Action, so I am not repeating the screenshots over here.
-
-The manifest file for this application remains the same except for the launch_path property values that now points to map.html.
+We will now extend our code to not just display the current latitude and longitude but to also show a map with a marker that will represent our current location. For MapMe we use a JavaScript library called `Leaflet <http://leafletjs.com>`__ to display the interactive map.
 
 .. literalinclude:: _static/episode05/mapme/manifest.webapp
    :language: json
    :linenos:
 
-                            
+Map Me - index.html
+-------------------
+
+The home page contains a simple button and instruction to invoke the HTML5 Geolocation API. When the button is pressed, a map is displayed with the user's location. All relevant source code is present in app.js as referenced on **line 14**.
+
+.. literalinclude:: _static/episode05/mapme/index.html
+   :language: html
+   :linenos:
+   
+Map Me - app.js
+---------------
+
+The heart of the application is in the app.js file below:
+
+.. literalinclude:: _static/episode05/mapme/app.js
+   :language: javascript
+   :linenos:
+   
+Let us look at the code in detail. We do the following:
+
+* On **line 4**, we call the ``setupLeafletMap()`` function.
+* On **line 13**, we create a Leaflet instance bound to the element with ``id=map``.
+* On **lines 16-19**, we point Leaflet to a server where it can find image tiles that show nearby streets and stitch them together to display on the screen.
+* On **lines 22-37**, Leaflet is told what to do once the user's location is found. It creates a map marker and a circle which represents the accuracy of the displayed location. 
+* On **lines 6-9**, define what should happen when the ``#locateMe`` button is pressed. When the button is pressed the map element is unhidden and the ``leafletFindLocation`` function is called. 
+* **Lines 43-50** deal with the removal of any location markers that already exist on the map. This allows the user's location to be found multiple times.
+* **Line 52** tells Leaflet to find the user's location. Leaflet will then fire the ``locationfound`` or ``locationerror`` event.  
+
+Local Installation and Testing
+------------------------------
+
+This completes our discussion of writing Firefox OS applications that utilize the HTML5 Geolocation API. Now comes the part of seeing it actually work. All we need to test out this application is:
+
+* You should have the Firefox OS Simulator set up in your WebIDE.
+* A working internet connection from your machine.
+* You should have downloaded/written the application as described above. You should navigate to your own directory structure when called to later.
+            
+Steps to install the application in your Firefox OS Simulator should be familiar to you now. Simply go to Project and click Open Packaged App. Navigate to the folder containing the two application and click on one of the folders to install one of the applications. On successful validation, the application will be installed and it will come up in your OS Simulator.  
+
+Next Steps
+----------
+
+I encourage you to enhance the current application by using the current location to do interesting things like retrieving nearby points of interest: hotels, movie theatres, etc. You could even write a weather application that detects where you are and retrieves the current weather conditions via a public API.
+
+Coming up Next
+--------------
+
+The next episode will take you through another HTML5 API: Local Storage. This is a very critical API to help build persistence (saving data) in your application. Local Storage is also one of the key techniques to enable your application to work offline.                                 
