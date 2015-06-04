@@ -17,7 +17,7 @@ application".
 
 Think of a simple example like making a phone call. This is standard
 functionality that is available on the phone as part of the dialer application.
-Now, lets say that you have a FirefoxOS Mobile App that at some point needs to
+Now, let's say that you have a FirefoxOS Mobile App that at some point needs to
 make a phone call. There is no need for you to understand the Telephony API and
 try out some hair-raising stunts like that.
 
@@ -106,7 +106,7 @@ chosen to complete your Activity. So when we click on Pick Image, the Firefox
 OS understands the activity pick and shows you automatically the 2 applications
 that could fulfill your activity request. You can then select from them.
 
-Neither of these activities work on the similator, but rest assured they do
+Neither of these activities work on the simulator, but rest assured they do
 work on a real device.
 
 .. image:: illustrations/episode08/web_activities4.png
@@ -159,20 +159,20 @@ Before we discuss what are Firefox OS Activities, it is good to reiterate what
 was mentioned in the beginning of this episode.
 
 * Most of our Smartphones come with a variety of Applications. Some of these
-  applications are available when you purchase the phone itself e.g. Dialer,
-  Messaging, Email, Camera, Contacts,etc. And over time you install a variety
+  applications are available when you purchase the phone itself such as dialer,
+  messaging, email, camera, and contacts. And over time you install a variety
   of other applications too that suit your needs.
 * If you have written or used a variety of applications, you would have noticed 
   that at times some core functionality or actions taken by these application
   are the same.
 * Some of the common actions in an application could include making a call,
-  sending a SMS, sending an email, launching a Camera to take a picture,
+  sending a SMS, sending an email, launching a camera to take a picture,
   viewing an external web application and so on.
 * So typically, when you want to do these common actions in your application,
   then as a developer you have 2 options in front of you:
   
-      a. Write from scratch or
-      b. Use existing applications that can do the work.
+    * Write from scratch.
+    * Use existing applications that can do the work.
 
 * The first option (which all developers love at their back of their mind) is
   to write that functionality from scratch. While this is laudable, it is not

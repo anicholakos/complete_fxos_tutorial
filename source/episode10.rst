@@ -17,13 +17,13 @@ Backend As a Service (mBaaS). The idea is that we shall be powered our Firefox
 OS Application from Server side infrastructure and functionality that shall be
 provided by the mBaaS Provider.
 
-What we shall be doing is writing a Random Quotes Firefox OS Application. The
-Quotes are those said by famous men over the years. For e.g. Albert Einstein
+What we shall be doing is writing an application that displays random quotes. The
+quotes are those said by famous men over the years. For example, Albert Einstein
 said "The difference between stupidity and genius, is that genius has its
 limits" and so on. All these quotes will not be present locally in the Firefox
-OS App local storage or database, it will in fact be delivered from a Server
-side solution.  This will make it easier for us to update the Server side with
-data whenever we want.
+OS App local storage or database, it will in fact be delivered from a
+server-side solution. This will make it easier for us to update the
+server-side with data whenever we want.
 
 
 Prerequisites
@@ -72,13 +72,13 @@ as shown in the screen below.
    :height: 350px
 
 Keep in mind that all data for this application is accessed from a hosted
-application that is running on the mBaaS Provider Kinvey’s infrastructure. We
+application that is running on the mBaaS provider Kinvey’s infrastructure. We
 shall see how easy it is to focus on your mobile functionality and let the
-heavy duty work of a server side solution be taken care of by a provider like
+heavy duty work of a server-side solution be taken care of by a provider, like
 Kinvey.
 
-The data is limited here, since I have just pulled some quotes from the Brainy
-Quotes site and populated my data store that is hosted on Kinvey.
+The data is limited here, since I have just pulled some quotes from the `Brainy
+Quote <http://www.brainyquote.com/>`__  site and populated my data store that is hosted on Kinvey.
 
 
 Download Full Source Code – Episode 10
@@ -97,6 +97,7 @@ inside of ``Quotes``, that looks something like this:
    :alt: Files in Quotes activity
    :height: 350px
 
+.. index:: mBaaS
 
 What is a mBaaS?
 ----------------
@@ -114,13 +115,13 @@ is all and good but what this means is that you have to now learn a server side
 stack and figure out how to write server side applications, host them and
 manage them. This takes away your focus as a mobile developer but it is not a
 problem that you can wish away. Typically there will be folks who are good on
-the Server side and they can help you with the development, but if you are
+the server-side and they can help you with the development, but if you are
 familiar with only the mobile client side of things, chances are that you want
 to get quickly started with it, almost no coding and still get the best of
 breed server side solution.
 
 This is exactly the spot that mBaaS providers want to address. They want you to
-focus on your application and its common needs on the Server side like users,
+focus on your application and its common needs on the server-side like users,
 authentication, data store to store application data and many such common
 services. All access of these services will be provided via a REST API or
 individual client side libraries that will wrap the calls and make it as easy
@@ -136,11 +137,10 @@ provides.
 
 So to summarize, what we want to do with Kinvey at a high level is as follows:
 
-
-#. Create an Application. Lets call it Quotes.
-#. Use the Kinvey Datastore to create 2 Collections: ``Authors`` and
-   ``Quotes``. The Authors will contain the names of the famous personalities.
-   And the Quotes will contain 2 key attributes, who said it and what they
+#. Create an application. Let's call it quotes.
+#. Use the Kinvey datastore to create 2 collections: ``Authors`` and
+   ``Quotes``. The authors will contain the names of the famous personalities
+   and the quotes will contain 2 key attributes, who said it and what they
    said. The who will be the Author name from the Authors collection.
 #. Load some sample data into the Kinvey Collections: Authors and Quotes.
 #. Use the *Kinvey JavaScript Wrapper Library* to initialize the connection to
@@ -166,18 +166,21 @@ identified in the previous section.
 
 The first thing you will need to do is sign up for Kinvey. Visit
 https://console.kinvey.com/ and sign up for the Service. You can go with the
-Free plan for the moment.
+free plan for the moment.
 
 Once you have signed up successfully, you will be asked to create a new
 application. Go ahead and create it. My new application screen is shown below
 and you can use the same thing.
 
+.. image:: illustrations/episode10/kinvey1.png
+   :alt: Kinvey New App
+   :height: 200px
 
 FirefoxOS-mBaaS Application – ``manifest.webapp``
 -------------------------------------------------
 
 The first thing we should discuss is the manifest file. This should be familiar
-now and it has the standard attributes like name, version, etc. There is
+by now, it has the standard attributes like name and version. There is
 nothing special happening here.
 
 Note that since we will be making external calls to the Kinvey service, we need
@@ -192,7 +195,7 @@ systemXHR so that outbound HTTP calls are permitted.
 FirefoxOS-mBaaS Application – ``index.html``
 --------------------------------------------
 
-Next up is the ``index.html`` page, and it is a simple jQuery Mobile page.
+Next up is the ``index.html`` page, which is just a simple jQuery Mobile page.
 
 .. literalinclude:: _static/episode10/index.html
    :language: html
@@ -207,10 +210,10 @@ Let us discuss the ``index.html`` page in detail now:
 * We have 2 pages in the mobile application. The first page is ``#home``,
   beginning on **line 17**, and the second page is ``#quotespage``
   beginning on **line 32**.
-* The home page will show a list of Authors that will be retrieved from our
+* The home page will show a list of authors that will be retrieved from our
   backend service.
-* A click on any Author will invoke the next service to retrieve the quotations
-  that the Author has made and the results will be shown in ``#quoteslist``
+* A click on any author will invoke the next service to retrieve the quotations
+  that the author has made and the results will be shown in ``#quoteslist``
   unordered list element (**line 40**).
 
 
@@ -223,39 +226,38 @@ FirefoxOS-mBaaS Application – ``app.js``
 
 Let us discuss the source code in detail now.
 
-
 * First thing to note is the standard jQuery Mobile ``pageinit`` function on
-  **line 49**. So when the index page is ready, we first just clear up the
-  author List i.e. the list of authors.
+  **line 49**. So, when the index page is ready, we first just clear up the
+  author list.
 * Next, we initialize the connection to the Kinvey service by invoking the
   ``mBaasInit()`` method on **line 54**. We will come to the rest of the code
   in a while.
 * The ``mBaasInit()`` method is defined on **line 4**. It is standard
-  boilerplate code that Kinvey provides. Basically what we are doing here is
+  boilerplate code that Kinvey provides. Essentially, what we are doing here is
   initialization the Kinvey connection via the ``Kinvey.init()`` method.
-  Notice that you will need to substitute the value of YOUR_APP_KEY and
-  YOUR_APP_SECRET with the respective values for your application. Once the
+  Notice that you will need to substitute the value of ``YOUR_APP_KEY`` and
+  ``YOUR_APP_SECRET`` with the respective values for your application. Once the
   initialization is good, we invoke the ``populateAuthors()`` method on
   **line 12**.
 * The ``populateAuthors()`` method is defined on **line 18**. The key thing to
   note here is the ``Kinvey.DataStore.find`` method that we are using. The
-  first parameter is the name of our Collection (in our case it is Authors).
-  The second parameter is an optional Query parameter which we are not using
-  here but will do later on. The Query parameter can be used to filter the
-  results.  The 3rd parameter is the success callback function that is provided
-  the result. The result is an error of all the models in the Collection. And
-  we simply iterate through it, extract out the information and display the
+  first parameter is the name of our collection (in our case it is authors).
+  The second parameter is an optional query parameter which we are not using
+  here but will do later on. The query parameter can be used to filter the
+  results. The 3rd parameter is the success callback function that is providing
+  the result. The result is an error of all the models in the collection and
+  we simply iterate through it, extract out the information, and display the
   authors in an unordered list element.
 * Now, visit **line 57**, where we are enabling a click function on any of the
   list elements in the ``authorList`` unordered list. If there is a click, it
   will invoke the ``populateQuotes`` method and pass the label, which will
-  contain the Author name.
+  contain the author name.
 * The ``populateQuotes`` method is defined on **line 32**. It utilizes the
   ``Kinvey.Query`` object first and passes the criteria for filtering the
-  Quotes by the who attribute. The value passed is that of the Author name,
-  since we need to now retrieve only the quotes of that Author.
+  quotes by the who attribute. The value passed is that of the author name,
+  since we need to now retrieve only the quotes of that author.
 * The next call should be familiar now and the ``Kinvey.DataStore.find``
-  method is invoked. This time it is invoked on the Quotes collection, the
+  method is invoked. This time it is invoked on the quotes collection, the
   Query filter is provided, which will give only those models whose who
   attribute has the value of the Author name selected. The 3rd parameter is
   once again the success callback method, where we iterate through the Quote

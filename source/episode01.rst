@@ -5,8 +5,8 @@
 
 .. _dev_setup:
 
-Episode 1: Overview and Development Setup
-=========================================
+Overview and Development Setup
+==============================
 
 Welcome to a series of tutorials on getting started with Firefox OS app
 development.

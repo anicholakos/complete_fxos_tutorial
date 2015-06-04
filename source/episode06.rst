@@ -5,8 +5,8 @@
 
 .. _storage:
 
-Episode 6: Enabling Storage
-===========================
+Enabling Storage
+================
 
 Welcome to Episode 6 of the Firefox OS App Development Tutorial. This episode
 will take you through the steps for writing Firefox OS Apps that add

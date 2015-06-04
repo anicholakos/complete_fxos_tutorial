@@ -4,12 +4,12 @@ Firefox OS App Development Tutorial
 .. image:: _static/firefoxos-2.png
     :alt: Firefox OS Logo
 
-by Romin Irani
+by Romin Irani and Sotirios Nicholakos
 
-remixed and updated by Sotirios Nicholakos, Jeff Elkner, Finn Cardiff, and
+remixed and updated with contributions by Jeff Elkner, Finn Cardiff, and
 Alex Hirschberg
 
-Last updated: 3 June 2015
+Last updated: 4 June 2015
 
 Episodes
 ========

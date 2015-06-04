@@ -5,8 +5,8 @@
 
 .. _hello_world:
 
-Episode 2: Hello World
-======================
+Hello World
+===========
 
 Welcome to Episode 2 of the Firefox OS App Development Tutorial. This series
 will take you through the steps to write Firefox OS Apps. This episode is about
@@ -113,8 +113,8 @@ and the ``manifest.webapp`` files that we shall discuss next.
 
 .. index:: index.html, UI, user interface
 
-The UI  – index.html
---------------------
+The UI  – ``index.html``
+------------------------
 
 Since our application is a simple single screen application, all we need at
 this point is a single ``index.html`` file together with the ``zipcode.js``
@@ -210,6 +210,7 @@ file:
 
 That is all we have in the code.
 
+.. index:: manifest.webapp
 
 Manifest file - ``manifest.webapp`` 
 -----------------------------------
