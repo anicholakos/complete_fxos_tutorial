@@ -30,7 +30,7 @@ licenses.
      clearly mark any material not subject to the license. This includes other
      CC-licensed material, or material used under an exception or limitation to
      copyright. `More considerations for licensors
-     <wiki.creativecommons.org/Considerations_for_licensors>`__.
+     <http://wiki.creativecommons.org/Considerations_for_licensors>`__.
 
      **Considerations for the public:** By using one of our public licenses, a
      licensor grants the public permission to use the licensed material under
@@ -44,7 +44,7 @@ licenses.
      special requests, such as asking that all changes be marked or described.
      Although not required by our licenses, you are encouraged to respect those
      requests where reasonable. `More_considerations for the public
-     <wiki.creativecommons.org/Considerations_for_licensees>`__.
+     <http://wiki.creativecommons.org/Considerations_for_licensees>`__.
 
 
 Creative Commons Attribution-ShareAlike 4.0 International Public License

@@ -28,11 +28,11 @@ Brief Overview of Firefox OS Apps
 Firefox OS supports 2 kinds of applications: **Hosted Apps** and
 **Packaged Apps**.
 
-**Hosted Apps** are those that are hosted at a web url. All the files that
-compose the app, i.e. HTML, JS, CSS, images, etc, are all present at the hosted
-url itself. No file is present on the device and the device will need to be
+**Hosted Apps** are those that are hosted at a web URL. All the files that
+compose the app, like HTML, JS, CSS, images, are all present at the hosted
+URL itself. No file is present on the device and the device will need to be
 connected to the internet to use it. There are mechanisms now in HTML5 like
-AppCache that allow you to cache assets of the file locally though for most
+`AppCache <https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache>`__ that allow you to cache assets of the file locally though for most
 purposes, we will assume that hosted apps are completely present online.
 
 The advantage of hosted apps is that you can update them easily and all your
@@ -40,10 +40,10 @@ users will get the latest version immediately on next access. The flip side is
 that they have to be connected.
 
 **Packaged Apps** take the opposite approach. All the files that compose your
-web app, i.e. HTML, JS, CSS, images, etc, are packaged into a ZIP file. The ZIP
+web app, like HTML, JS, CSS, images, are packaged into a ZIP file. The ZIP
 file is downloaded on your device and the app is installed locally.
 Applications that are deployed in this fashion can function without the device
-being connected to the internet. However, if your application makes use of some
+being connected to the Internet. However, if your application makes use of some
 public API or external web service, you will need to be connected.
 
 The Firefox Marketplace which we shall see in a later episode supports listing
@@ -61,8 +61,8 @@ beyond that.
 
 What we shall write is a mobile application that will give us details on the
 different ZIP codes in the United States.  You enter a valid ZIP code in the
-application and it will give you the details of that ZIP code i.e. its state
-name, city name, longitude and latitude.
+application and it will give you the details of that ZIP code, including its state
+name, city name, longitude, and latitude.
 
 The mobile application makes use of an external Web service called `Zip Code
 Galore! <http://api.zippopotam.us>`__. This will also help demonstrate making
@@ -86,19 +86,22 @@ ZIP code service and retrieves/parses/displays the information as shown below:
 Simple and useful? Let’s get going with the code. Note that the example
 screenshots are from the Firefox OS Simulator running locally.
 
+.. index:: library
 
 Download Full Source Code – Episode 2
 -------------------------------------
 
 I suggest that you begin with a full download of the project source code. Since 
-the project depends on libraries like jQuery and jQuery Mobile, it will save
-you the hassle of downloading the dependent libraries.
+the project depends on `libraries
+<http://en.wikipedia.org/wiki/JavaScript_library>`__ like `jQuery
+<http://jquery.com/>`__ and `jQuery Mobile <http://jquerymobile.com/>`__, it
+will save you the hassle of downloading the dependent libraries.
 
 Go ahead and download the code from: `https://github.com/anicholakos/zipcodeapp
 <https://github.com/anicholakos/zipcodeapp>`__
 
 Extract all the code in some folder. For example, on my machine, the code is
-present in ``$HOME/Projects/zipcodeapp`` but it could be any directory of your
+present in ``$HOME/Projects/zipcodeapp``, but it could be any directory of your
 choice. You should see a folder structure inside of ``zipcodeapp``, that looks
 like this:
 
@@ -137,16 +140,16 @@ but I leave that choice to you.
 
 One point to note here: One may argue about why a simple application like this
 needs heavy frameworks like jQuery and jQuery Mobile. Can’t we just get going
-with our plain simple HTML coded by hand? Yes you can. My intention here is not
+with our plain simple HTML coded by hand? Yes, you can. My intention here is not
 to demonstrate optimum coding techniques but to show you that you can use your
 existing frameworks while coding Firefox OS apps. The idea is to indicate to
 the reader that all the tools/frameworks that he/she is used to should be used
 as needed.
 
-So moving on to the UI part, focus on **lines 14-30** for the user interface.
+So, moving on to the UI part, focus on **lines 14-30** for the user interface.
 
 * **Line 21** declares the input field that we shall use to allow for the user
-  to enter the pincode. Note that we make good use of HTML5 attributes like
+  to enter the ZIP code. Note that we make good use of HTML5 attributes like
   placeholder and autofocus. The placeholder attribute is a good way to specify
   what needs to be entered in the input (like a hint). It saves a lot of real
   estate on a small mobile screen.
@@ -161,7 +164,7 @@ So moving on to the UI part, focus on **lines 14-30** for the user interface.
 * **Line 23** specifies a button labeled ``Search``, which when clicked needs
   to retrieve for us the details of the ZIP code entered.
 * **Lines 25-27** define the results list where we shall display the results.
-  This is just my way of definining the UI. Feel free to be as creative as you
+  This is just my way of defining the UI. Feel free to be as creative as you
   want.
 
 
