@@ -94,8 +94,8 @@ I suggest that you begin with a full download of the project source code. Since
 the project depends on libraries like jQuery and jQuery Mobile, it will save
 you the hassle of downloading the dependent libraries.
 
-Go ahead and download the code from: `https://github.com/jelkner/zipcodeapp
-<https://github.com/jelkner/zipcodeapp>`__
+Go ahead and download the code from: `https://github.com/anicholakos/zipcodeapp
+<https://github.com/anicholakos/zipcodeapp>`__
 
 Extract all the code in some folder. For example, on my machine, the code is
 present in ``$HOME/Projects/zipcodeapp`` but it could be any directory of your

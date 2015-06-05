@@ -93,7 +93,7 @@ I suggest that you begin with a full download of the project source code.
 Since the project depends on libraries like jQuery and jQuery Mobile, it will
 save you the hassle of downloading the dependent libraries.
 
-Go ahead & download the code from: https://github.com/jelkner/SaveNotes
+Go ahead & download the code from: https://github.com/anicholakos/SaveNotes
 
 Extract all the code in some directory. You should see a directory structure
 inside of ``SaveNotes`` that looks something like this:

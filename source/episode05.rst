@@ -65,13 +65,13 @@ I suggest that you begin with a full download of the project source code. Since
 Map Me depends on jQuery, it will save you the hassle of downloading the
 dependent libraries.
 
-Go ahead & download the code from: https://github.com/jelkner/WhereIAm
+Go ahead & download the code from: https://github.com/anicholakos/WhereIAm
 
 You'll notice that there are two seperate folders for both applications. Go
 ahead and extract all the code in some folder, on my machine the code is
 present in /home/anicholakos/Projects/WhereIAm but it could be any directory of
 your choice. Now when you want to load up one of the apps, just select one of
-the folders in WhereIAm.
+the folders in ``WhereIAm``.
 
 .. index:: GPS
 
@@ -148,7 +148,7 @@ behavior is what you are seeing below.
   subsequent uses as you can see from the Remember my choice toggle button. You
   may also go into the Device Phone Settings and clear the permission.
 
-OK, so we can safely click on the Allow button. This will use the HTML5
+OK, so we can safely click on the "Allow" button. This will use the HTML5
 Geolocation API, retrieve the current latitude, longitude and display them on
 the screen.
 
@@ -216,8 +216,8 @@ Geolocation JavaScript API.
   parameter of type PositionError is passed to it. You can use this
   PositionError method to determine the exact reason why it failed via the code
   and message attributes. It could have 3 values:
-  PositionError.PERMISSION_DENIED, PositionError.UNAVAILABLE and
-  PositionError.TIMEOUT. So if you need to do some custom handling or error
+  ``PositionError.PERMISSION_DENIED``, ``PositionError.UNAVAILABLE``, and
+  ``PositionError.TIMEOUT``. So, if you need to do some custom handling or error
   message depending on the error, you can check the value and then give a
   custom message instead of the message attribute.
 

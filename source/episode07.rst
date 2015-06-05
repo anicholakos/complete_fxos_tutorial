@@ -98,7 +98,7 @@ I suggest that you begin with a full download of the project source code.
 Since the project depends on libraries like jQuery and jQuery Mobile, it will
 save you the hassle of downloading the dependent libraries.
 
-Download the code from: https://github.com/jelkner/SaveNotesIndexedDB.
+Download the code from: https://github.com/anicholakos/SaveNotesIndexedDB
 
 Extract all the code in some directory. You should see a directory structure
 inside of ``SaveNotes`` that looks something like this:
