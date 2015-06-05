@@ -1,6 +1,6 @@
-# Complete Firefox OS Tutorial
+# Firefox OS App Development Tutorial
 
-by Romin Irani  
+by Romin Irani and Sotirios Nicholakos 
 
 This is a derivative of Romin Irani's blog tutorial,
 [Firefox OS – The Mobile Web Platform That Needs To Succeed](http://rominirani.com/2013/07/23/firefox-os-the-mobile-web-platform-that-needs-to-succeed/).
