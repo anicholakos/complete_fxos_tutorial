@@ -13,17 +13,16 @@ development.
 
 I will assume that the reason you are here is to learn how to write Firefox OS
 apps. Well, if you are web developer, I can safely state that you already know
-how to write Firefox OS Applications since what the Firefox OS device runs are
+how to write Firefox OS applications since what the Firefox OS device runs are
 web applications.
 
-There is enough material on the web available on the history of Firefox OS, the 
-reasons for its existence, the devices that currently run the OS and more. I
-will not get into those details but briefly touch upon them so that we are on
-the same page. If you want to know more about why I want Firefox OS to succeed, 
-here is my blog post titled `Firefox OS – The Mobile Platform That Needs To
-Succeed
+There is already enough material on the history of Firefox OS, the 
+reasons for its existence, the devices that currently run the OS, and more
+available on the Web. I will not get into those details but briefly touch upon
+them so that we are on the same page. If you want to know more about why I want
+Firefox OS to succeed, here is my blog post titled `Firefox OS – The Mobile
+Platform That Needs To Succeed
 <http://rominirani.com/2013/07/23/firefox-os-the-mobile-web-platform-that-needs-to-succeed/>`__.
-
 
 What is Firefox OS? A Quick Overview, Please!
 ---------------------------------------------
@@ -31,7 +30,6 @@ What is Firefox OS? A Quick Overview, Please!
 As with many things of this nature, it is a very good idea to start with
 the `Firefox OS Wikipedia page <http://en.wikipedia.org/wiki/Firefox_OS>`__ to
 get a broad overview of what Firefox is and how it came to be.
-
 
 .. index:: supported devices 
 
@@ -49,7 +47,7 @@ What Do I Need to Learn?
 ------------------------
 
 Chances are that if you are web developer, you know everything there is to
-building Firefox OS Apps. Use all the tools/frameworks that the Web provides
+building Firefox OS apps. Use all the tools/frameworks that the web provides
 and it should work well. Remember these are days of infancy for Firefox OS, so
 do expect hiccups along the way.
 
@@ -62,7 +60,7 @@ that.
 
 Along the way, I shall try and cover some of the HTML5 JavaScript APIs but I
 strongly suggest that you be comfortable with basic Web technologies like
-HTML5/CSS/JavaScript. Code Academy has some great tutorials (`HTML/CSS
+HTML5/CSS/JavaScript. Codecademy has some great tutorials (`HTML/CSS
 <http://www.codecademy.com/tracks/web>`__ and `JavaScript
 <http://www.codecademy.com/tracks/javascript>`__), if you want to learn about
 them.
@@ -73,9 +71,9 @@ them.
 Is There a Firefox Marketplace?
 -------------------------------
 
-Yes, there is a Firefox Marketplace for your apps. This is one similar lines
-to the ones for other Vendors and if you are familiar with the submission
-process for them, you will find this no different.
+Yes, there is a Firefox Marketplace for your apps. This is similar to other
+vendors and if you are familiar with the submission process for them, you will
+find this no different.
 
 .. image:: illustrations/episode01/fxos_marketplace.png
    :alt: Firefox Marketplace
@@ -92,7 +90,6 @@ Few things to note here:
 We shall cover the complete process of submitting your Firefox OS application
 to the Marketplace in a future episode. This will suffice for now.
 
-
 .. index:: dev tools
 
 Can We Get Going With the Installation of Dev Tools, Please?
@@ -104,15 +101,14 @@ Development. As long as you are able to generate a standards based HTML5 Web
 app, you will be all set. All you really need is your good old text editor to
 get going.
 
-In later episodes, we shall show how we could take an existing web application,
+In later episodes, I will show how we can take an existing Web application,
 do a little bit of manifest work and boom, the app is ready for Firefox OS. But
 more on that later.
-
 
 Firefox OS Simulator
 --------------------
 
-Firefox now comes with
+Firefox now comes with the
 `WebIDE <https://developer.mozilla.org/en-US/docs/Tools/WebIDE>`__ built-in.
 Just press ``Shift+F8`` in an active Firefox window to launch it.
 

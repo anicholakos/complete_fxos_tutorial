@@ -12,13 +12,11 @@ Welcome to Episode 2 of the Firefox OS App Development Tutorial. This series
 will take you through the steps to write Firefox OS Apps. This episode is about
 writing our first Hello World program for Firefox OS.
 
-
 Prerequisites
 -------------
 
 You have setup your machine with the Firefox OS Simulator. If not, you can go
 back to :ref:`dev_setup` to do this.
-
 
 .. index:: hosted apps, packaged apps, apps; hosted, apps; packaged
 
@@ -55,14 +53,13 @@ Episode 2 in Action
 -------------------
 
 Let us check out the application in action first. This will help you understand
-what we shall be achieving by the end of this blog post. While we follow
+what we shall be achieving by the end of this blog post. While we can follow
 tradition and would like to say “Hello World”, it will be good to go a bit
 beyond that.
 
 What we shall write is a mobile application that will give us details on the
 different ZIP codes in the United States.  You enter a valid ZIP code in the
-application and it will give you the details of that ZIP code, including its state
-name, city name, longitude, and latitude.
+application and it will give you the details of that ZIP code, including its state name, city name, longitude, and latitude.
 
 The mobile application makes use of an external Web service called `Zip Code
 Galore! <http://api.zippopotam.us>`__. This will also help demonstrate making
@@ -76,7 +73,7 @@ All right then, the first screen of the mobile app is shown below:
    :alt: App before entering pin code 
    :height: 350px
 
-When we enter a valid ZIP code e.g. **20001**, the app makes a call to the
+When we enter a valid ZIP code, like **20001**, the app makes a call to the
 ZIP code service and retrieves/parses/displays the information as shown below:
 
 .. image:: illustrations/episode02/app_in_action2.png
@@ -113,7 +110,6 @@ You will notice that ``jQuery`` and ``jQueryMobile`` libraries are present but
 the key files that make up your application are ``index.html``, ``zipcode.js``,
 and the ``manifest.webapp`` files that we shall discuss next.
 
-
 .. index:: index.html, UI, user interface
 
 The UI  – ``index.html``
@@ -130,7 +126,7 @@ below:
 
 The UI is based on `jQuery Mobile <https://jquerymobile.com/>`__, which is a
 responsive web UI framework. I strongly suggest to use UI frameworks that are
-responsive in nature as in they adapt to different screen sizes and resolutions.
+responsive in nature, as in they adapt to different screen sizes and resolutions.
 Increasingly the web is being accessed by people with different screen sizes
 and resolutions and it is imperative that your web UI adjust itself gracefully
 for optimum web display.  You can also choose to go for frameworks like
@@ -185,8 +181,8 @@ file:
   ``btnSearch`` button.  The code is a straightforward Ajax call to the web
   service hosted at ``http://api.zippopotam.us/us/<YourZIPCode>``.  This
   service returns us a JSON formatted string for the ZIP code that we enter.
-  For e.g. if you make the following request http://api.zippopotam.us/us/90210,
-  it will return you the ZIP code details for pincode have a value 90210.  A
+  For example, if you make the following request http://api.zippopotam.us/us/90210,
+  it will return you the details for the ZIP code 90210. A
   sample JSON response is shown below::
 
       {"post code": "90210", "country": "United States", 
@@ -226,12 +222,12 @@ as the ``android-manifest.xml`` file that you write.
 We shall go into the details on manifest in a later episode but for now, it is
 sufficient to know that this file will provide information like:
 
-* Name of your App
-* App Version
-* App Description
-* App Icons
+* Name of your app
+* App version
+* App description
+* App icons
 * Permissions that your app needs to run on device
-* Locales that your App supports
+* Locales that your app supports
 * and much more
 
 Take a look at the ``manifest.webapp`` file shown below:
@@ -261,8 +257,8 @@ Let us discuss the entries:
   two sizes of icons: 128 pixel and 512 pixel (see
   `https://developer.mozilla.org/en-US/Apps/Build/Manifest
   <https://developer.mozilla.org/en-US/Apps/Build/Manifest>`__).
-* The next values **developer**, **url** and **name** specify details on who
-  created the application. Be consistent with these values and do specify a url
+* The next values **developer**, **url**, and **name** specify details on who
+  created the application. Be consistent with these values and do specify a URL
   that actually exists.
 * The **default_locale** is English (en) for now.
 * The next 2 values are critical to the functioning of this application. This
