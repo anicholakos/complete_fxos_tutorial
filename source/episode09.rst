@@ -74,16 +74,21 @@ and File size.
 Download Full Source Code
 -------------------------
 
-I suggest that you begin with a full download of the project source code. Since the project depends on libraries like jQuery and jQuery Mobile, it will save you the hassle of downloading the dependent libraries.
+I suggest that you begin with a full download of the project source code. Since
+the project depends on libraries like jQuery and jQuery Mobile, it will save
+you the hassle of downloading the dependent libraries.
 
 Go ahead & download the code from : https://github.com/rominirani/DeviceStorage
 
-Extract all the code in some folder. For e.g. on my machine, the code is present in e:\firefox-os-blog\episode9\DeviceStorage but it could be any directory of your choice. You should see a folder structure inside of DeviceStorage , that looks something like this:
+Extract all the code in some folder. For e.g. on my machine, the code is
+present in e:\firefox-os-blog\episode9\DeviceStorage but it could be any
+directory of your choice. You should see a folder structure inside of
+DeviceStorage, that looks something like this:
 
 Firefox OS Device Storage
 -------------------------
 
-The Device Storage API in FirefoxOS is used to access the file system. Till now
+The Device Storage API in FirefoxOS is used to access the file system. Until now
 we had seen how to use persistence in our application via the LocalStorage and
 IndexedDB APIs and when you use those APIs you are pretty much dealing with
 storage but at a high level. You are not dealing with individual files and
@@ -92,6 +97,7 @@ directories and reading/writing to them.
 The Device Storage API is just about that. Reading and Writing to files
 directly. The Firefox OS exposes 5 storage areas that you can read and write
 from. They are:
+
 * Apps
 * SD card
 * Videos
@@ -106,11 +112,11 @@ The other four areas stand for pretty much what their names indicate and you
 can read and write to any of the areas.
 
 The API is fairly simple. All you need to do is invoke the
-navigator.getDeviceStorage() method and pass the storage area name to it i.e.
-‘sdcard‘, ‘music‘, ‘pictures‘ and ‘videos‘ and it will return back a
+``navigator.getDeviceStorage()`` method and pass the storage area name to it, such as
+"sdcard", "music", "pictures", and "videos", which will return a
 DeviceStorage Object that you can use to access the storage area. 
 
-You have methods that let you browse / list down the contents of the storage
+You have methods that let you browse/list down the contents of the storage
 area (which we shall see in the code later on). There are methods available for
 additional stuff too like:
 * Determining free space
@@ -128,15 +134,15 @@ DeviceStorage Application
 
 OK. Lets get going with understanding the code and how we can access Device Storage in our application.
 
-DeviceStorage Application - manifest.webapp
--------------------------------------------
+DeviceStorage Application - ``manifest.webapp``
+-----------------------------------------------
 
 The first thing we should discuss is the manifest file. This should be familiar
 now and it has the standard attributes like name, version, etc. There is
 nothing special happening here.
 
 The permissions are the most important over here. To access the storage areas
-in FirefoxOS, your application needs to be a privileged application, so we are
+in Firefox OS, your application needs to be a privileged application, so we are
 defining that in the “type”: “privileged” entry.
 
 Next we need to mention what permissions our application needs. You have to
@@ -147,11 +153,62 @@ The readwrite mode will be needed if you plan to create/modify files.
 You will notice in the manifest that we have provided readwrite permissions for
 each of the 4 storage areas (sdcard, videos, music and pictures).
 
-DeviceStorage Application - index.html
+DeviceStorage Application - ``index.html``
+------------------------------------------
+
+Next up is the ``index.html`` page and it is a simple jQuery Mobile page.
+
+Let us discuss the ``index.html`` page in detail now:
+
+* We have included the script in ``app.js`` file on **line 10**.
+* There is only 1 page in the mobile app as seen on **line 15**.
+* This page has several buttons, which when clicked will display the contents of that storage area in the ``#results`` div shown on **line 25**.
+
+DeviceStorage Application - ``app.js``
 --------------------------------------
 
-Next up is the index.html page and it is a simple jQuery Mobile page.
+Let us discuss the source code in detail now.
 
-Let us discuss the index.html page in detail now:
-* We have included the script in app.js file on line 10.
+* First, the standard stuff. On **line 25**, the standard jQuery ready function is fired and you will find various click handlers defined for the 4 buttons.
+* Each of the button click handlers invokes the same function listContents, which is provided a single parameter i.e. the name of the storage area to browser/list the contents.
+* The listContents function is defined on Line#1
+* Pay attention to **line 5**, where we make a call to the navigator.getDeviceStorage (storagename) method. This is a standard call and we can pass either sdcard, videos, music or pictures to it. The return value is a object that we can use to enumerate the different files present over there.
+* We use a cursor that we will use to enumerate through all the files. This cursor instance is obtained via the enumerate() function on the files object.
+* If the cursor is obtained successfully, the onsuccess callback method is invoked. In this method, we simply go through each result. Remember the ``this.result`` gives a File object that has attributes like name, ``lastModifiedDate``, type and size.
+* So we are simply creating an image element and other meta data information element and appending it to the ``#results`` element in the page.
+* If the file object is ``null``, it means that there are no more elements and we can mark the done attribute as true. If it is not done, then we move to the next record via the continue method.
 
+Local Installation and Testing
+------------------------------
+
+This completes our discussion of writing Firefox OS applications that access
+Device Storage. Now comes the part of seeing it actually work. All we need to
+test out this application is:
+
+* You should have installed the Firefox OS Simulator add-on in your Firefox Browser.  
+* A working internet connection from your machine.  
+* You should have downloaded/written the application as described above. We will assume that the ``index.html`` and ``manifest.webapp`` file are present in a folder names ``DeviceStorage``. You should navigate to your own directory structure when called to later.
+
+Steps to install the application in your Firefox OS Simulator should be
+familiar to you now. Simply launch the Firefox OS Simulator in your Firefox
+Browser. From the Dashboard, click on the "Add Directory" button and point it to
+the ``manifest.webapp`` file for the DeviceStorage application. On successful
+validation, the application will be installed and it will come up in your OS
+Simulator. For sample screenshots, refer to the section at the beginning of
+this blog post for Episode 9 in Action. 
+
+Next Steps
+----------
+
+Device Storage is a key feature that you can use to write your own files and
+also create applications like File Explorer, etc. It can also be used to have a
+better control in imaging applications, where you want to access all the files
+present and read/write to them via your own code. I recommend going through the
+official documentation on Device Storage and try to create a file, etc.
+
+Keep in mind not to use the Device Storage as a general mechanism for
+persistence. If you want to build application level persistence in your
+application, it is recommended that you still use LocalStorage and/or IndexedDB
+API.
+
+Until the next episode, stay tuned and give me feedback.
