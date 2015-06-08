@@ -70,14 +70,14 @@ the right note.
 All right then, the first screen of the mobile app is shown below:
 
 .. image:: illustrations/episode02/app_in_action1.png
-   :alt: App before entering pin code 
+   :alt: App before entering ZIP code 
    :height: 350px
 
 When we enter a valid ZIP code, like **20001**, the app makes a call to the
 ZIP code service and retrieves/parses/displays the information as shown below:
 
 .. image:: illustrations/episode02/app_in_action2.png
-   :alt: App after submitting pin code 
+   :alt: App after submitting ZIP code 
    :height: 350px
 
 Simple and useful? Let’s get going with the code. Note that the example
