@@ -3,23 +3,22 @@ var db;
 
 function initializeDB() {
     if (window.indexedDB) {
-        console.log("IndexedDB support is there");
+        console.log("Your environment supports IndexedDB");
     }
     else {
        alert("Indexed DB is not supported. Where are you trying to run this?");
     }
  
     // open the database
-    // 1st parameter: Database name. We are using the name 'notesdb'
+    // 1st parameter : Database name. We are using the name 'notesdb'
     // 2nd parameter is the version of the database.
     var request = indexedDB.open('notesdb', 1);
 
     request.onsuccess = function(e) {
         // e.target.result has the connection to the database
         db = e.target.result;
-        //Alternately, if you want - you can retrieve all the items
     }
- 
+	 
     request.onerror = function(e) {
         console.log(e);
     };
@@ -84,17 +83,18 @@ $(document).ready(function() {
 
     //Click Handlers for Add Notes page
     $("#btnSaveNote").click(function() {
-        noteTitle = $("#noteTitle").val();
-        noteDetails = $("#noteDetails").val();
+        var noteTitle = $("#noteTitle").val();
+        var noteDetails = $("#noteDetails").val();
 
         // Create the transaction with 1st parameter is the list of stores and
         // the second specifies a flag for the readwrite option
         var transaction = db.transaction([ 'notes' ], 'readwrite');
    
         // Create the Object to be saved i.e. our Note
-        var value = {};
-        value.title = noteTitle;
-        value.details = noteDetails;
+        var value = {
+            title: noteTitle,
+            details: noteDetails
+        };
   
         // Add the note to the store
         var store = transaction.objectStore('notes');
@@ -121,13 +121,13 @@ $(document).ready(function() {
         var transaction = db.transaction([ 'notes' ], 'readwrite');
         var store = transaction.objectStore('notes');
    
-        //Delete all the notes
-        //Alternately if you know the ID, you can use store.delete(ID) for
+        // Delete all the notes
+        // Alternately if you know the ID, you can use store.delete(ID) for
         // individual item deletion
         var request = store.clear();
         request.onsuccess = function() {
             $("#note-list").html("");
-            alert("All Notes have got cleared");
+            alert("All Notes have been cleared");
          }
          request.onerror = function(e) {
              alert("Error while deleting notes: " + e.value);

@@ -13,7 +13,7 @@ previous episode, we looked at how you can use Device Storage in your Firefox
 OS Applications.
 
 In this episode, we shall be taking a look at an emerging area known as Mobile
-Backend As a Service (mBaaS). The idea is that we shall be powered our Firefox
+Backend as a Service (mBaaS). The idea is that we shall be powered our Firefox
 OS Application from Server side infrastructure and functionality that shall be
 provided by the mBaaS Provider.
 
@@ -102,7 +102,7 @@ inside of ``Quotes``, that looks something like this:
 What is a mBaaS?
 ----------------
 
-mBaaS stands for `Mobile Backend As A Service
+mBaaS stands for `Mobile Backend as a Service
 <http://en.wikipedia.org/wiki/Mobile_Backend_as_a_service>`__. To give it some
 context, one of the challenges that most mobile developers face is that sooner
 or later, they have to create a common server side solution which can contain
