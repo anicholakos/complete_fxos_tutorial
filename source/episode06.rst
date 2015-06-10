@@ -14,23 +14,20 @@ persistence capability to your application. What this means is that you can use
 a local database of sorts to save your data and the data will be available not
 just across the application but also across application restarts.
 
-
 Prerequisites
 -------------
 
-* You have setup your machine with the Firefox OS Simulator.  If not you can
+* You have setup your machine with the Firefox OS simulator.  If not you can
   check out :ref:`dev_setup`, which takes you through the entire setup.
 * You have installed the ``zipcodeapp`` that we covered in :ref:`hello_world`.
   This tutorial uses that as an example, but if you have any other application
   installed in the Firefox WebIDE, then you should be able to follow along.
-
 
 What this Episode covers 
 ------------------------
 
 * What is the HTML5 LocalStorage API.
 * Sample Firefox OS Application that covers using HTML5 LocalStorage API.
-
 
 Episode 6 in Action
 -------------------
@@ -82,9 +79,8 @@ If you wish to delete all the notes, there is also a ``Clear`` button. This
 will delete permanently all the notes from the Local Storage.
 
 Let’s get going with the code. Note that the example screenshots are from the
-Firefox OS Simulator running locally. So you can use your Firefox OS Simulator
+Firefox OS simulator running locally. So you can use your Firefox OS Simulator
 to run all the examples.
-
 
 Download Full Source Code – Episode 6
 -------------------------------------
@@ -101,7 +97,6 @@ inside of ``SaveNotes`` that looks something like this:
 .. image:: illustrations/episode06/save_notes_files.png
    :alt: SaveNotes app directory contents 
    :height: 350px
-
 
 HTML5 Storage APIs
 ------------------
@@ -147,13 +142,11 @@ Few things to do about the Storage API:
     * ``key(<index>)``: returns the value for a key as per the index. The
       index ranges from 0 to (length-1).
 
-
 SaveNotes Application
 ---------------------
 
 OK. Let's get going with understand the code and how the Local Storage API has
 been used to persist (save) notes in our application.
-
 
 SaveNotes Application - ``manifest.webapp``
 -------------------------------------------
@@ -165,7 +158,6 @@ nothing special happening here.
 .. literalinclude:: _static/episode06/manifest.webapp
    :language: javascript 
    :linenos:
-
 
 SaveNotes Application - ``index.html``
 --------------------------------------
@@ -190,7 +182,6 @@ Let us discuss the ``index.html`` page in detail now:
 * The ``#view-notes`` page has a button in the header to clear all notes
   (``#clearAllNotesBtn``) and it has a div area (``#note-list``) to display all
   current notes, once we get them from the Local Storage.
-
 
 SaveNotes Application - ``app.js``
 ----------------------------------
@@ -226,17 +217,14 @@ LocalStorage JavaScript API:
   values and form the jQuery Mobile collapsible div for each note entry. Note
   that this loop (**lines 13-22**) makes use of 3 additional methods of
   localStorage:
-
      * We first use the ``localStorage.length`` method to get the total number
        of items that are present.
      * Next we get the key for each item via the ``localStorage.key(index)``
        method.
      * Finally, we use the ``localStorage.getItem(<key>)`` method to retrieve
        the details for the note. 
-
 * For each note, we are simply creating a collapsible div for jQuery
   Mobile UI and appending it to the ``#note-list`` element.
-
 
 Local Installation and Testing
 ------------------------------
@@ -250,7 +238,6 @@ we need to test out this application is:
    will assume that the ``index.html`` and ``manifest.webapp`` files are
    present in a directory named ``SaveNotes``. You should navigate to your own
    directory structure when called to later.
-
 
 Debugging Local Storage
 -----------------------
@@ -275,7 +262,6 @@ add a few items and then inspect the value again. You will be able to see the li
    .. image:: illustrations/episode06/debugging2.png
       :alt: Developer console object 
       :height: 150px
-
 
 You can even try out the different methods of the localStorage API. For example, in the screenshot below, 
 I have tried out localStorage.length. That returns me a value of 2, since I have 2 notes saved. Similarly, 

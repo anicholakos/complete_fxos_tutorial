@@ -44,8 +44,8 @@ Applications that are deployed in this fashion can function without the device
 being connected to the Internet. However, if your application makes use of some
 public API or external web service, you will need to be connected.
 
-The Firefox Marketplace which we shall see in a later episode supports listing
-of both Hosted and Packaged Applications.
+The Firefox Marketplace, which we shall see in a later episode, supports listing
+of both hosted and packaged applications.
 
 .. index:: ajax, API
 
@@ -129,7 +129,7 @@ responsive web UI framework. I strongly suggest to use UI frameworks that are
 responsive in nature, as in they adapt to different screen sizes and resolutions.
 Increasingly the web is being accessed by people with different screen sizes
 and resolutions and it is imperative that your web UI adjust itself gracefully
-for optimum web display.  You can also choose to go for frameworks like
+for optimum web display. You can also choose to go for frameworks like
 `Bootstrap <http://getbootstrap.com/>`__ or even `Firefox OS Building Blocks
 <https://developer.mozilla.org/en-US/Apps/Design/Firefox_OS_building_blocks>`__,
 but I leave that choice to you.
@@ -157,7 +157,7 @@ So, moving on to the UI part, focus on **lines 14-30** for the user interface.
   <http://rominirani.com/html5-recipes-forms-enhancements/>`__ and `HTML5
   Recipes: New Input Types
   <http://rominirani.com/html5-recipes-new-input-types/>`__.
-* **Line 23** specifies a button labeled ``Search``, which when clicked needs
+* **Line 23** specifies a button labeled "Search", which when clicked needs
   to retrieve for us the details of the ZIP code entered.
 * **Lines 25-27** define the results list where we shall display the results.
   This is just my way of defining the UI. Feel free to be as creative as you
@@ -203,8 +203,8 @@ file:
       var xhr = new XMLHttpRequest({mozSystem: true});
 
 * The next few lines make the standard Ajax call to the service and when the
-  response is ready, it parses out the information, creates individual li
-  elements for the result data and populates the searchResults with the
+  response is ready, it parses out the information, creates individual ``li``
+  elements for the result data and populates the ``searchResults`` with the
   response.
 
 That is all we have in the code.
@@ -227,8 +227,7 @@ sufficient to know that this file will provide information like:
 * App description
 * App icons
 * Permissions that your app needs to run on device
-* Locales that your app supports
-* and much more
+* Locales that your app supports and much more
 
 Take a look at the ``manifest.webapp`` file shown below:
 
@@ -344,7 +343,6 @@ Steps to install the application in your Firefox OS Simulator are given below:
        :alt: App in phone menu 
        :height: 400px
 
-
 Development Cycle
 -----------------
 
@@ -363,9 +361,9 @@ Next Steps
 
 I encourage you to enhance the current application by providing error checks,
 validation, etc. If you want, you could possibly try out writing your own app.
-If you are looking for other public web apis to call, take a look at
+If you are looking for other public web APIs to call, take a look at
 `ProgrammableWeb <http://www.programmableweb.com>`__,  they list thousands of
-APIs. Maybe you could write a Weather App, Currency App... the world is yours.
+APIs. Maybe you could write a weather or currency app... the world is yours.
 
 
 Coming up Next

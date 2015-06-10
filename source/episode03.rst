@@ -35,8 +35,9 @@ What we shall cover in this Episode
 * Observing manifest errors.
 * Refreshing an application.
 * Using Firefox Dev Tools to view console output.
-* Debugging your Firefox OS App.
+* Debugging your Firefox OS app.
 
+.. index:: WebIDE
 
 Using the Firefox WebIDE
 ------------------------
@@ -49,6 +50,7 @@ will open in a new window.
    :alt: WebIDE launch button 
    :height: 100px
 
+.. index:: Simulator
 
 Installing and Connecting to a Simulator
 ----------------------------------------
@@ -98,6 +100,7 @@ You should then see the device listed under the ``Select Device`` menu.
    :alt: Select Runtime menu showing Flame device 
    :height: 400px
 
+..index:: Installing/removing apps
 
 Adding and Removing an Application
 ----------------------------------
@@ -138,19 +141,21 @@ Simply click that and your application should get removed from the simulator.
       :alt: Deleting apps
       :height: 400px
 
+.. index:: Manifest errors
+
 Observing Manifest Errors
 -------------------------
 
 The manifest.webapp file as we have learned so far is the single most important
-file for your web application.  It contains meta information about your
+file for your web application. It contains meta information about your
 application and is used by the OS to learn about the app, its permissions, the
-different icons, and the launch URL.  There are mandatory and optional elements
+different icons, and the launch URL. There are mandatory and optional elements
 and the OS Simulator does a good check of determining if you have missed out
-something.  If you have, it throws back the errors at you right in the
+something. If you have, it throws back the errors at you right in the
 dashboard at the time of adding or refreshing the application.
 
 Try out the following: open up your manifest.webapp file in the editor and
-remove the name element.  Try to add or refresh the element, and notice that
+remove the name element. Try to add or refresh the element, and notice that
 the simulator is not too happy with what you have done.  It will throw back a
 validation message. A sample screenshot of the error is shown below:
 
@@ -159,27 +164,27 @@ validation message. A sample screenshot of the error is shown below:
       :height: 350px
 
 Manifest errors are common. It is normal to make mistakes here since you might
-be using a text editor to type in things.  Errors could range from XML
+be using a text editor to type in things. Errors could range from XML
 validation errors to missing out of mandatory parameters, etc.
 
 Correcting the errors is as simple as rectifying the mistakes in your
 manifest.webapp file and then refreshing the app. It's as simple as that.
-
 
 Refreshing an Application
 -------------------------
 
 A normal development cycle will involve incremental development. You will
 develop a screen or functionality, see it work within the simulator and move on
-to the next one and so on.  You need a quick way or refreshing or reloading
+to the next one and so on. You need a quick way or refreshing or reloading
 your application into the OS Simulator. It couldn’t be easier with the Firefox
-OS Simulator.  All you need to do is make your changes in the WebIDE as you
+OS Simulator. All you need to do is make your changes in the WebIDE as you
 have been doing and then click on the refresh button located at the top.
 
 The Simulator will reload and relaunch your application. It will also reload
 the manifest.webapp file and validate it for you before it reloads your new
 version.
 
+.. index:: Dev Tools
 
 Using Firefox Dev Tools
 -----------------------
@@ -226,6 +231,7 @@ your code at that exact point.
 For more information on Dev Tools, visit Developer Tools note on the Mozilla
 Developer Network.
 
+.. index:: Debugging
 
 Debugging a Firefox OS App
 --------------------------
@@ -279,7 +285,6 @@ Next Steps
 I encourage you try out debugging because it will be needed as you progress
 along in your Firefox Apps. Put in some breakpoints, single step through the
 code, inspect some variables, etc.
-
 
 Coming up Next
 --------------

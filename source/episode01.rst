@@ -65,9 +65,6 @@ HTML5/CSS/JavaScript. Codecademy has some great tutorials (`HTML/CSS
 <http://www.codecademy.com/tracks/javascript>`__), if you want to learn about
 them.
 
-
-.. index:: marketplace
-
 Is There a Firefox Marketplace?
 -------------------------------
 
@@ -89,8 +86,6 @@ Few things to note here:
 
 We shall cover the complete process of submitting your Firefox OS application
 to the Marketplace in a future episode. This will suffice for now.
-
-.. index:: dev tools
 
 Can We Get Going With the Installation of Dev Tools, Please?
 ------------------------------------------------------------

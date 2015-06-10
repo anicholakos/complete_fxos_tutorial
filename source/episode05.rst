@@ -2,7 +2,6 @@
    and/or modify this document under the terms of the Creative Commons
    Attribution-ShareAlike 4.0 International Public License.
 
-
 .. _locationlocation:
 
 Location, Location, Location
@@ -137,7 +136,6 @@ permission before determining the location. Each browser does this differently
 via a bar that typically appears just under the address bar and the Firefox OS
 behavior is what you are seeing below.
 
-
 * If you say “Yes” to the browser asking for permission, then it goes about its
   work to determine the location.
 * If you refuse permission, then the error callback method (which we shall see
@@ -161,7 +159,7 @@ The first thing we should discuss is the manifest file. This should be familiar
 now and it has the standard attributes like name, version, etc.
 
 What is specific to our example and important is to note that we have an
-additional permission for geolocation on **line #14**.
+additional permission for geolocation on **line 14**.
 
 .. literalinclude:: _static/episode05/locateme/manifest.webapp
    :language: json
@@ -172,7 +170,7 @@ Locate Me - index.html
 
 Next up is the index.html page and it contains a button ``LocateMe`` on **line
 #21**. The button click handler and all relevant source code is present in
-``app.js`` as referenced on **line #10**.
+``app.js`` as referenced on **line 10**.
 
 .. literalinclude:: _static/episode05/locateme/index.html
    :language: html
@@ -190,7 +188,6 @@ This file contains the code that is invoked when the button is clicked on **line
 
 Let us discuss the source code in detail now since it contains the HTML5
 Geolocation JavaScript API.
-
 
 * On **line 3** we have an ``EventListener`` so that when the button is clicked,
   the application checks to see if
